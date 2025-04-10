@@ -1,0 +1,24 @@
+.difficulty_tag {
+    padding: 6px;
+    width: max-content;
+    font-weight: 600;
+    display: block;
+    border-radius: 6px;
+
+    user-select: none;
+}
+
+.hard_tag {
+    background-color: rgb(224, 0, 0);
+    color: white;
+}
+
+.medium_tag {
+    background-color: rgb(207, 207, 0);
+    color: white;
+}
+
+.easy_tag {
+    background-color: rgb(5, 233, 5);
+    color: white;
+}

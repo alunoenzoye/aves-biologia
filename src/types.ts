@@ -1,0 +1,1 @@
+export type AppPages = "Start" | "Catalog" | "QuizSelect" | "Game";
