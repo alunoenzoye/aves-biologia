@@ -17,9 +17,9 @@ const Difficulties = {
 
 export type difficulties = keyof typeof Difficulties;
 
-export type props = {difficulty: difficulties};
+export type difficultyTagProps = {difficulty: difficulties};
 
-export function DifficultyTag({difficulty}: props) {
+export function DifficultyTag({difficulty}: difficultyTagProps) {
     const difficultyClass = Difficulties[difficulty].className;
     const difficultyText = Difficulties[difficulty].text;
 

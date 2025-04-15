@@ -31,19 +31,21 @@
 
 .easy {
     background: linear-gradient(0deg, rgba(99,255,0,1) 0%, rgba(200,246,191,1) 100%);
-    box-shadow: 0px 0px 8px 8px rgba(17, 255, 0, 0.512);
+    /* box-shadow: 0px 0px 8px 8px rgba(17, 255, 0, 0.512); */
 }
 
 .medium {
     background: linear-gradient(0deg, rgba(255,214,0,1) 0%, rgb(162, 179, 7) 100%);
-    box-shadow: 0px 0px 8px 8px rgba(255, 255, 0, 0.512);
+    /* box-shadow: 0px 0px 8px 8px rgba(255, 255, 0, 0.512); */
 }
 
 .hard {
     background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(108,64,53,1) 100%);
-    box-shadow: 0px 0px 8px 8px rgba(255, 0, 0, 0.512);
+    /* box-shadow: 0px 0px 8px 8px rgba(255, 0, 0, 0.512); */
 }
 
 .quiz_title {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: left;
 }

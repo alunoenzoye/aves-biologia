@@ -1,21 +1,37 @@
 import QuizSelect from '../../components/QuizSelect';
 import styles from './styles.module.css';
+import PageHeader from '../../components/PageHeader';
+import React from 'react';
+import { getQuizes } from '../../modules/datafetcher';
+import { difficultyType } from '../../types';
 
-const StartPage = () => {
+function QuizSelectPage() {
+    const quizes = React.useMemo(() => {
+        return Object.values(getQuizes()).map((quiz, index) => (
+            <QuizSelect
+                key={index}
+                quizName='aaaa'
+                title={quiz.name}
+                difficulty={quiz.difficulty as difficultyType}
+                totalQuestions={quiz.questions.length} />
+        ))
+    }, [])
+
     return (
-        <div className={styles.page_container}>
-            <div className={styles.game_start_container}>
-                <h1 className="game_title">Selecione o quiz</h1>
-                <div className={styles.game_btns}>
-                    <QuizSelect 
-                        title={"Sla vey"} 
-                        difficulty={"Medium"} 
-                        totalQuestions={10}                    
-                    />
+        <>
+            <div className={styles.page_container}>
+                <PageHeader 
+                    to='/'
+                    title='SELECIONE O QUIZ'
+                />
+                <div className={styles.game_start_container}>
+                    <div className={styles.game_btns}>
+                        {quizes}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
-export default StartPage;
+export default QuizSelectPage;

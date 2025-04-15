@@ -1,0 +1,24 @@
+{
+    "quiz1": {
+        "name":"QUIZ TESTE",
+        "difficulty": "Easy",
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pombo",
+                "answers": ["pombo", "aveTeste"]
+            }
+        ]
+    },
+    "quiz2": {
+        "name":"QUIZ TESTE2",
+        "difficulty": "Easy",
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pombo",
+                "answers": ["pombo", "aveTeste"]
+            }
+        ]
+    }
+}

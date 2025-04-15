@@ -4,20 +4,15 @@
 }
 
 .game_start_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     height: 80%;
+    padding: 3rem;
 }
 
 .game_btns {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 
-    margin-top: 3rem;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .game_btn {

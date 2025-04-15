@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import styles from './styles.module.css';
 
-const StartPage = () => {
+function StartPage() {
     return (
         <div className={styles.page_container}>
             <div className={styles.game_start_container}>
