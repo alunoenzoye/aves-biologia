@@ -1,7 +1,7 @@
 {
     "quiz1": {
-        "name":"QUIZ TESTE",
-        "difficulty": "Easy",
+        "name":"Quiz das aves",
+        "difficulty": "Medium",
         "questions": [
             {
                 "name": "QUAL é essa ave",
@@ -13,6 +13,17 @@
     "quiz2": {
         "name":"QUIZ TESTE2",
         "difficulty": "Easy",
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pombo",
+                "answers": ["pombo", "aveTeste"]
+            }
+        ]
+    },
+    "quiz3": {
+        "name":"Quiz DIFICIL",
+        "difficulty": "Hard",
         "questions": [
             {
                 "name": "QUAL é essa ave",

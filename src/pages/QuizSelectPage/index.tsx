@@ -2,7 +2,7 @@ import QuizSelect from '../../components/QuizSelect';
 import styles from './styles.module.css';
 import PageHeader from '../../components/PageHeader';
 import React from 'react';
-import { getQuizes } from '../../modules/datafetcher';
+import { getQuizes } from '../../modules/dataFetcher';
 import { difficultyType } from '../../types';
 
 function QuizSelectPage() {

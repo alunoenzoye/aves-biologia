@@ -3,5 +3,10 @@
         "displayName": "Pomba",
         "hint": "É visto comumente em praças!",
         "description": "descrição teste"
+    },
+    "aveTeste": {
+        "displayName": "Teste",
+        "hint": "Teste Kk",
+        "description": "descrição teste"
     }
 }

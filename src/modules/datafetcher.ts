@@ -3,7 +3,7 @@ import quizes from "../data/quizes.json";
 import { aveType } from "../types";
 
 export function getAve(name: keyof typeof aves): aveType {
-    const ave: aveType = aves[name];
+    let ave: aveType = aves[name];
 
     if (ave === undefined) {
         console.error("Invalid ave name.");

@@ -1,11 +1,14 @@
 .quiz_select {
     text-decoration: none !important;
-    width: 200px;
+    min-width: 200px;
+    min-height: 200px;
     height: 200px;
+    width: 200px;
 
     padding: 4px;
     color: white;
     transition: 100ms ease;
+    box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.46);
 }
 
 .quiz_select:hover {
