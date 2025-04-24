@@ -1,17 +1,17 @@
-import React, { ReducerState, useEffect, useReducer } from "react";
+import { useEffect, useMemo, useReducer } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { quizLocationState } from "../../types";
+import { quizLocationState, quizName } from "../../types";
 import QuizQuestion from "../../components/QuizQuestion";
+import styles from "./styles.module.scss";
+import { getQuestionData, getQuiz } from "../../modules/dataFetcher";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
 const RESTART = "RESTART";
-const CHANGE_QUIZ = "CHANGE_QUIZ"
-
-export type quizPageProps = {};
+const CHANGE_QUIZ = "CHANGE_QUIZ";
 
 type quizState = {
-    currentQuiz: string | null,
+    currentQuiz: quizName,
     currentQuestion: number,
     hasFailed: boolean,
     hasWon: boolean
@@ -19,11 +19,27 @@ type quizState = {
 
 type quizAction = {
     type: typeof CORRECT_ANSWER | typeof WRONG_ANSWER | typeof RESTART | typeof CHANGE_QUIZ,
-    quizName?: string
+    quizName?: quizName
 }
 
 function reducer(state: quizState, action: quizAction) {
+    if (state.currentQuiz === null) {
+        return {
+            ...state
+        }
+    }
+
     if (action.type === CORRECT_ANSWER) {
+        const nextQuestionIndex = state.currentQuestion + 1;
+        const quizData = getQuiz(state.currentQuiz);
+
+        if (nextQuestionIndex > (quizData.questions.length - 1)) {
+            return {
+                ...state,
+                hasWon: true,
+            }
+        }
+
         return {
             ...state,
             currentQuestion: state.currentQuestion + 1
@@ -31,9 +47,27 @@ function reducer(state: quizState, action: quizAction) {
     } else if (action.type === WRONG_ANSWER) {
         return {
             ...state,
-            currentQuestion: 1,
+            currentQuestion: 0,
             hasFailed: true
         };
+    } else if (action.type === RESTART) {
+        return {
+            ...state,
+            currentQuestion: 0,
+            hasFailed: false,
+            hasWon: false
+        }
+    } else if (action.type === CHANGE_QUIZ) {
+        if (action.quizName === undefined) {
+            console.error("No quiz name provided.");
+        }
+
+        return {
+            currentQuestion: 0,
+            hasFailed: false,
+            hasWon: false,
+            currentQuiz: action.quizName as quizName,
+        }
     }
 
     return {
@@ -41,17 +75,18 @@ function reducer(state: quizState, action: quizAction) {
     }
 }
 
-export function QuizPage(props: quizPageProps) {
+export function QuizPage() {
     const navigate = useNavigate();
     const location = useLocation();
+
     // TODO: add state dispatching for when the an user gets a question right, wrong, or gets the last question right.
     const [state, dispatch] = useReducer(
-        reducer, 
+        reducer,
         {
-            currentQuestion: 1, 
-            hasFailed: false, 
+            currentQuestion: 0,
+            hasFailed: false,
             hasWon: false,
-            currentQuiz: null,
+            currentQuiz: "quiz2",
         }
     )
 
@@ -60,7 +95,7 @@ export function QuizPage(props: quizPageProps) {
             navigate('/');
         }
         const locationState: quizLocationState = location.state;
-        const newQuizName = locationState.quizName
+        const newQuizName = locationState.quizName as quizName
 
         if (state.currentQuiz !== newQuizName) {
             dispatch({
@@ -69,19 +104,40 @@ export function QuizPage(props: quizPageProps) {
             })
         }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [location, navigate])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location])
+    
+    const questionData = useMemo(() => {
+        return getQuestionData(state.currentQuiz, state.currentQuestion)
+    }, [state.currentQuestion, state.currentQuiz])
 
-    console.log(state);
+    console.log(state)
+
+    if (state.hasWon) {
+        return (
+            <div>
+                <h1>Você ganhou!</h1>
+                <button onClick={() => dispatch({type: RESTART})}>Reiniciar</button>
+            </div>
+        )
+    } else if (state.hasFailed) {
+        return (
+            <div>
+                <h1>Você errou!</h1>
+                <button onClick={() => dispatch({type: RESTART})}>Reiniciar</button>
+            </div>
+        )
+    }
 
     return (
-        <div>
-            <h1>Questão atual{state.currentQuestion}</h1>
+        <div className={styles.page_container}>
+            <h1>Questão atual {state.currentQuestion + 1}</h1>
             <QuizQuestion
-                onRightAnswer={() => dispatch({type: CORRECT_ANSWER})}
-                onWrongAnswer={() => dispatch({type: WRONG_ANSWER})}
-                rightAnswer={"aveTeste"}
-                answers={["aveTeste", "pomba"]}
+                onRightAnswer={() => dispatch({ type: CORRECT_ANSWER })}
+                onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
+                rightAnswer={questionData.rightAnswer}
+                answers={questionData.answers}
+                hint={questionData.hint}
             />
         </div>
     )

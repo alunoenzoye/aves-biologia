@@ -5,8 +5,8 @@
         "questions": [
             {
                 "name": "QUAL é essa ave",
-                "rightAnswer": "pombo",
-                "answers": ["pombo", "aveTeste"]
+                "rightAnswer": "pomba",
+                "answers": ["pomba", "aveTeste"]
             }
         ]
     },
@@ -16,8 +16,13 @@
         "questions": [
             {
                 "name": "QUAL é essa ave",
-                "rightAnswer": "pombo",
-                "answers": ["pombo", "aveTeste"]
+                "rightAnswer": "pomba",
+                "answers": ["pomba", "aveTeste"]
+            },
+            {
+                "name": "Sla",
+                "rightAnswer": "aveTeste",
+                "answers": ["pomba", "aveTeste"]
             }
         ]
     },
@@ -27,8 +32,8 @@
         "questions": [
             {
                 "name": "QUAL é essa ave",
-                "rightAnswer": "pombo",
-                "answers": ["pombo", "aveTeste"]
+                "rightAnswer": "pomba",
+                "answers": ["pomba", "aveTeste"]
             }
         ]
     }

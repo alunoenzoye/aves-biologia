@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 function StartPage() {
     return (

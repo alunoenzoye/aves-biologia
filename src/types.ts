@@ -1,4 +1,10 @@
+import aves from "./data/aves.json";
+import quizes from "./data/quizes.json";
+
 export type AppPages = "Start" | "Catalog" | "QuizSelect" | "Game";
+
+export type aveName = keyof typeof aves;
+export type quizName = keyof typeof quizes;
 
 export type aveType = {
     displayName: string,
@@ -10,13 +16,17 @@ export type difficultyType = "Easy" | "Medium" | "Hard";
 
 export type questionType = {
     name: string,
-    rightAnswer: string,
-    answers: [string],
+    rightAnswer: aveName,
+    answers: aveName[],
 }
+
+export type questionData = {
+    hint: string
+} & questionType
 
 export type quizType = {
     name: string,
-    difficulty: difficultyType,
+    difficulty: difficultyType | string,
     questions: [questionType]
 }
 

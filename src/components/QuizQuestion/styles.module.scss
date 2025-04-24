@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image_container {
+    height: 100%;
+    width: 30%;
+}
+
+.question_container {
+    padding: 2rem;
+    width: 60%;
+    height: auto;
+    background-color: gray;
+}
+
+.answers_container {
+    background-color: white;
+    display: flex;
+}
