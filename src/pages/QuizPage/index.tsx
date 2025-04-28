@@ -4,6 +4,7 @@ import { quizLocationState, quizName } from "../../types";
 import QuizQuestion from "../../components/QuizQuestion";
 import styles from "./styles.module.scss";
 import { getQuestionData, getQuiz } from "../../modules/dataFetcher";
+import QuizEnd from "../../components/QuizEnd";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
@@ -15,6 +16,7 @@ type quizState = {
     currentQuestion: number,
     hasFailed: boolean,
     hasWon: boolean
+    totalRightQuestions: number,
 }
 
 type quizAction = {
@@ -37,6 +39,7 @@ function reducer(state: quizState, action: quizAction) {
             return {
                 ...state,
                 hasWon: true,
+                totalRightQuestions: state.totalRightQuestions + 1
             }
         }
 
@@ -53,6 +56,7 @@ function reducer(state: quizState, action: quizAction) {
     } else if (action.type === RESTART) {
         return {
             ...state,
+            totalRightQuestions: 0,
             currentQuestion: 0,
             hasFailed: false,
             hasWon: false
@@ -67,6 +71,7 @@ function reducer(state: quizState, action: quizAction) {
             hasFailed: false,
             hasWon: false,
             currentQuiz: action.quizName as quizName,
+            totalRightQuestions: 0
         }
     }
 
@@ -87,6 +92,7 @@ export function QuizPage() {
             hasFailed: false,
             hasWon: false,
             currentQuiz: "quiz2",
+            totalRightQuestions: 0
         }
     )
 
@@ -108,24 +114,32 @@ export function QuizPage() {
     }, [location])
     
     const questionData = useMemo(() => {
-        return getQuestionData(state.currentQuiz, state.currentQuestion)
-    }, [state.currentQuestion, state.currentQuiz])
+        return getQuestionData(state.currentQuiz, state.currentQuestion);
+    }, [state.currentQuestion, state.currentQuiz]);
+
+    const quizData = useMemo(() => {
+        return getQuiz(state.currentQuiz);
+    }, [state.currentQuiz]);
 
     console.log(state)
 
     if (state.hasWon) {
         return (
-            <div>
-                <h1>Você ganhou!</h1>
-                <button onClick={() => dispatch({type: RESTART})}>Reiniciar</button>
-            </div>
+            <QuizEnd 
+                won={true}
+                rightQuestions={state.totalRightQuestions}
+                totalQuestions={quizData.questions.length}
+                onRestartClick={() => dispatch({type: RESTART})}
+            />
         )
     } else if (state.hasFailed) {
         return (
-            <div>
-                <h1>Você errou!</h1>
-                <button onClick={() => dispatch({type: RESTART})}>Reiniciar</button>
-            </div>
+            <QuizEnd 
+                won={false}
+                rightQuestions={state.totalRightQuestions}
+                totalQuestions={quizData.questions.length}
+                onRestartClick={() => dispatch({type: RESTART})}
+            />
         )
     }
 
