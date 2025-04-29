@@ -20,10 +20,6 @@ export type questionType = {
     answers: aveName[],
 }
 
-export type questionData = {
-    hint: string
-} & questionType
-
 export type quizType = {
     name: string,
     difficulty: difficultyType | string,

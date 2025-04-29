@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { quizLocationState, quizName } from "../../types";
 import QuizQuestion from "../../components/QuizQuestion";
 import styles from "./styles.module.scss";
-import { getQuestionData, getQuiz } from "../../modules/dataFetcher";
+import { getQuiz } from "../../modules/dataFetcher";
 import QuizEnd from "../../components/QuizEnd";
+import useQuiz from "../../hooks/useQuiz";
+import useQuestion from "../../hooks/useQuestion";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
@@ -45,7 +47,8 @@ function reducer(state: quizState, action: quizAction) {
 
         return {
             ...state,
-            currentQuestion: state.currentQuestion + 1
+            currentQuestion: state.currentQuestion + 1,
+            totalRightQuestions: state.totalRightQuestions + 1
         };
     } else if (action.type === WRONG_ANSWER) {
         return {
@@ -84,7 +87,6 @@ export function QuizPage() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // TODO: add state dispatching for when the an user gets a question right, wrong, or gets the last question right.
     const [state, dispatch] = useReducer(
         reducer,
         {
@@ -95,6 +97,9 @@ export function QuizPage() {
             totalRightQuestions: 0
         }
     )
+
+    const questionData = useQuestion(state.currentQuiz, state.currentQuestion);
+    const quizData = useQuiz(state.currentQuiz);
 
     useEffect(() => {
         if (location.state === null) {
@@ -113,15 +118,6 @@ export function QuizPage() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location])
     
-    const questionData = useMemo(() => {
-        return getQuestionData(state.currentQuiz, state.currentQuestion);
-    }, [state.currentQuestion, state.currentQuiz]);
-
-    const quizData = useMemo(() => {
-        return getQuiz(state.currentQuiz);
-    }, [state.currentQuiz]);
-
-    console.log(state)
 
     if (state.hasWon) {
         return (
@@ -151,7 +147,6 @@ export function QuizPage() {
                 onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
                 rightAnswer={questionData.rightAnswer}
                 answers={questionData.answers}
-                hint={questionData.hint}
             />
         </div>
     )
