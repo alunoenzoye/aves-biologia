@@ -1,0 +1,27 @@
+@use '../../scss/nav-button' as *;
+
+.page_container {
+    width: 100%;
+    height: 100%;
+}
+
+.game_start_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+}
+
+.game_btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+.game_btn {
+    @include nav-button(10rem, 4rem);
+}

@@ -7,6 +7,7 @@ import { getQuiz } from "../../modules/dataFetcher";
 import QuizEnd from "../../components/QuizEnd";
 import useQuiz from "../../hooks/useQuiz";
 import useQuestion from "../../hooks/useQuestion";
+import useLoadedSave from "../../hooks/useLoadedSave";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
@@ -84,6 +85,8 @@ function reducer(state: quizState, action: quizAction) {
 }
 
 export function QuizPage() {
+    useLoadedSave();
+
     const navigate = useNavigate();
     const location = useLocation();
 

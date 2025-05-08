@@ -1,12 +1,15 @@
 import QuizSelect from '../../components/QuizSelect';
 import styles from './styles.module.css';
 import PageHeader from '../../components/PageHeader';
-import React from 'react';
 import { getQuizzes } from '../../modules/dataFetcher';
 import { difficultyType, quizName } from '../../types';
+import useLoadedSave from '../../hooks/useLoadedSave';
+import { useMemo } from 'react';
 
 function QuizSelectPage() {
-    const quizes = React.useMemo(() => {
+    useLoadedSave();
+
+    const quizes = useMemo(() => {
         const quizes = getQuizzes();
         return Object.keys(quizes).map((key, index) => {
             const quiz = quizes[key as quizName];
