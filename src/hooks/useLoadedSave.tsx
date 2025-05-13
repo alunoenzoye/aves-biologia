@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router";
-import saveHandler from "../modules/saveHandler";
 import { useEffect } from "react";
+import useCurrentSave from "./useCurrentSave";
 
 function useLoadedSave() {
     const navigate = useNavigate();
+    const currentSave = useCurrentSave();
 
     useEffect(() => {
-        if (saveHandler.getCurrentSave() === null) {
+        if (currentSave === null) {
             navigate('/');
         };
-    }, [navigate]);
-
+    }, [navigate, currentSave]);
 }
 
 export default useLoadedSave;

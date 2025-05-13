@@ -1,9 +1,13 @@
-import { useCallback, useReducer, useState } from "react";
+import { useEffect, useReducer } from "react";
 import styles from "./styles.module.scss";
 import saveHandler from "../../modules/saveHandler";
 import { saveSlots } from "../../types";
+import SaveCreator from "../../components/SaveCreator";
+import SaveView from "../../components/SaveView";
+import { useNavigate } from "react-router";
+import useCurrentSave from "../../hooks/useCurrentSave";
 
-// todo: refactor component to use reducers, simplyfing logic and allowing for rerenders when needed.
+// todo: refactor this page component into three components such: SaveSwitcher, SaveCreator e SaveView .
 
 type pageState = {
     selectedSlot: saveSlots | null,
@@ -17,6 +21,8 @@ type saveAction = {
     name: string,
 } | {
     type: "DELETE"
+} | {
+    type: "PICK_SAVE"
 };
 
 function reducer(state: pageState, action: saveAction) {
@@ -38,6 +44,13 @@ function reducer(state: pageState, action: saveAction) {
                 selectedSlot: null
             }
         }
+    } else if (action.type === "PICK_SAVE") {
+        if (state.selectedSlot !== null) {
+            saveHandler.selectSlot(state.selectedSlot)
+            return {
+                selectedSlot: null
+            }
+        }
     }
 
     return {
@@ -46,6 +59,15 @@ function reducer(state: pageState, action: saveAction) {
 }
 
 function StartPage() {
+    const navigate = useNavigate();
+    const loadedSave = useCurrentSave();
+
+    useEffect(() => {
+        if (loadedSave !== null) {
+            navigate('/home')
+        }
+    }, [navigate, loadedSave])
+
     const [state, dispatch] = useReducer(reducer, {
         selectedSlot: null,
     })
@@ -61,21 +83,22 @@ function StartPage() {
                         slot: null
                     })}>Voltar</button>
                     {saveHandler.getSaveOnSlot(state.selectedSlot) === null ? (
-                        <div>
-                            <h1>Criar Save</h1>
-                            <button onClick={() => dispatch({
+                        <SaveCreator 
+                            onCreate={(name) => dispatch({
                                 type: "CREATE",
-                                name: "teste"
-                            })}>Criar save</button>
-                        </div>
+                                name: name
+                            })} 
+                        />
                     ) : (
-                        <div>
-                            Informacao do save
-                            {saveHandler.getSaveOnSlot(state.selectedSlot)?.getName()}
-                            <button onClick={() => dispatch({
+                        <SaveView 
+                            selectedSlot={state.selectedSlot}
+                            onPickSave={() => dispatch({
+                                type: "PICK_SAVE",
+                            })}
+                            onDelete={() => dispatch({
                                 type: "DELETE",
-                            })}>Apagar</button>
-                        </div>
+                            })}
+                        />
                     )}
                 </div>
             )}
