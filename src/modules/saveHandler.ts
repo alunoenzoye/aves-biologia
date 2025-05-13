@@ -112,13 +112,12 @@ type selectableSlots = saveSlots | null
 class SaveHandler {
     private currentSlot: selectableSlots = null;
 
-    public createSaveInCurrentSlot(name: string) {
-        if (this.currentSlot === null || getPlayerSaveFromStorage(this.currentSlot) !== null) {
-            console.log("asdasd")
+    public createSaveInSlot(name: string, slot: saveSlots) {
+        if (getPlayerSaveFromStorage(slot) !== null) {
             return;
         }
 
-        savePlayerSaveToStorage(this.currentSlot, {
+        savePlayerSaveToStorage(slot, {
             name: name,
             unlockedAves: [],
             completedQuizzes: []

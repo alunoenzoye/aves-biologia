@@ -20,6 +20,26 @@ type saveAction = {
 };
 
 function reducer(state: pageState, action: saveAction) {
+    const currentSave = saveHandler.getCurrentSave();
+
+    if (action.type === "CREATE") {
+        if (currentSave === null && state.selectedSlot !== null) {
+            saveHandler.createSaveInSlot(action.name, state.selectedSlot);
+        }
+    } else if (action.type === "SELECT") {
+        return {
+            selectedSlot: action.slot
+        }
+    } else if (action.type === "DELETE") {
+        if (state.selectedSlot !== null) {
+            saveHandler.getSaveOnSlot(state.selectedSlot)?.delete();
+
+            return {
+                selectedSlot: null
+            }
+        }
+    }
+
     return {
         ...state
     }
@@ -32,31 +52,46 @@ function StartPage() {
 
     return (
         <div className={styles.start_page}>
-            {selectedSlot === null ? (
+            {state.selectedSlot === null ? (
                 <p>Nenhum save selecionado</p>
             ) : (
                 <div>
-                    <button onClick={() => setSelectedSlot(null)}>Voltar</button>
-                    {saveOnSlot === null ? (
+                    <button onClick={() => dispatch({
+                        type: "SELECT",
+                        slot: null
+                    })}>Voltar</button>
+                    {saveHandler.getSaveOnSlot(state.selectedSlot) === null ? (
                         <div>
                             <h1>Criar Save</h1>
-                            <button onClick={() => saveHandler.createSaveInCurrentSlot("nome teste")}>Criar save</button>
+                            <button onClick={() => dispatch({
+                                type: "CREATE",
+                                name: "teste"
+                            })}>Criar save</button>
                         </div>
                     ) : (
                         <div>
                             Informacao do save
-                            <button onClick={() => {
-                                saveOnSlot.delete();
-                                setSelectedSlot(null);
-                            }}>Apagar</button>
+                            {saveHandler.getSaveOnSlot(state.selectedSlot)?.getName()}
+                            <button onClick={() => dispatch({
+                                type: "DELETE",
+                            })}>Apagar</button>
                         </div>
                     )}
                 </div>
             )}
             <div className={styles.save_slots}>
-                <button onClick={() => selectSlot("1")}>Save 1</button>
-                <button onClick={() => selectSlot("2")}>Save 2</button>
-                <button onClick={() => selectSlot("3")}>Save 3</button>
+                <button onClick={() => dispatch({
+                    type: "SELECT",
+                    slot: "1",
+                })}>Save 1</button>
+                <button onClick={() => dispatch({
+                    type: "SELECT",
+                    slot: "2",
+                })}>Save 2</button>
+                <button onClick={() => dispatch({
+                    type: "SELECT",
+                    slot: "3",
+                })}>Save 3</button>
             </div>
         </div>
     )
