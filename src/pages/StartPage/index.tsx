@@ -7,7 +7,6 @@ import SaveView from "../../components/SaveView";
 import { useNavigate } from "react-router";
 import useCurrentSave from "../../hooks/useCurrentSave";
 
-// todo: refactor this page component into three components such: SaveSwitcher, SaveCreator e SaveView .
 
 type pageState = {
     selectedSlot: saveSlots | null,
@@ -18,7 +17,6 @@ type saveAction = {
     slot: saveSlots | null
 } | {
     type: "CREATE",
-    name: string,
 } | {
     type: "DELETE"
 } | {
@@ -26,27 +24,12 @@ type saveAction = {
 };
 
 function reducer(state: pageState, action: saveAction) {
-    const currentSave = saveHandler.getCurrentSave();
-
-    if (action.type === "CREATE") {
-        if (currentSave === null && state.selectedSlot !== null) {
-            saveHandler.createSaveInSlot(action.name, state.selectedSlot);
-        }
-    } else if (action.type === "SELECT") {
+    if (action.type === "SELECT") {
         return {
             selectedSlot: action.slot
         }
     } else if (action.type === "DELETE") {
         if (state.selectedSlot !== null) {
-            saveHandler.getSaveOnSlot(state.selectedSlot)?.delete();
-
-            return {
-                selectedSlot: null
-            }
-        }
-    } else if (action.type === "PICK_SAVE") {
-        if (state.selectedSlot !== null) {
-            saveHandler.selectSlot(state.selectedSlot)
             return {
                 selectedSlot: null
             }
@@ -72,36 +55,38 @@ function StartPage() {
         selectedSlot: null,
     })
 
+    const onCreate = (name: string) => {
+        if (loadedSave === null && state.selectedSlot !== null) {
+            saveHandler.createSaveInSlot(name, state.selectedSlot);
+        }
+
+        dispatch({
+            type: "CREATE"
+        });
+    }
+
+    const onPickSave = () => {
+        if (state.selectedSlot !== null) {
+            saveHandler.selectSlot(state.selectedSlot);
+        }
+
+        dispatch({
+            type: "PICK_SAVE"
+        });
+    }
+
+    const onDelete = () => {
+        if (state.selectedSlot !== null) {
+            saveHandler.getSaveOnSlot(state.selectedSlot)?.delete();
+
+            dispatch({
+                type: "DELETE"
+            });
+        }
+    }
+
     return (
         <div className={styles.start_page}>
-            {state.selectedSlot === null ? (
-                <p>Nenhum save selecionado</p>
-            ) : (
-                <div>
-                    <button onClick={() => dispatch({
-                        type: "SELECT",
-                        slot: null
-                    })}>Voltar</button>
-                    {saveHandler.getSaveOnSlot(state.selectedSlot) === null ? (
-                        <SaveCreator 
-                            onCreate={(name) => dispatch({
-                                type: "CREATE",
-                                name: name
-                            })} 
-                        />
-                    ) : (
-                        <SaveView 
-                            selectedSlot={state.selectedSlot}
-                            onPickSave={() => dispatch({
-                                type: "PICK_SAVE",
-                            })}
-                            onDelete={() => dispatch({
-                                type: "DELETE",
-                            })}
-                        />
-                    )}
-                </div>
-            )}
             <div className={styles.save_slots}>
                 <button onClick={() => dispatch({
                     type: "SELECT",
@@ -116,6 +101,27 @@ function StartPage() {
                     slot: "3",
                 })}>Save 3</button>
             </div>
+            {state.selectedSlot === null ? (
+                <p>Nenhum save selecionado</p>
+            ) : (
+                <div>
+                    <button onClick={() => dispatch({
+                        type: "SELECT",
+                        slot: null
+                    })}>Voltar</button>
+                    {saveHandler.getSaveOnSlot(state.selectedSlot) === null ? (
+                        <SaveCreator 
+                            onCreate={onCreate} 
+                        />
+                    ) : (
+                        <SaveView 
+                            selectedSlot={state.selectedSlot}
+                            onPickSave={onPickSave}
+                            onDelete={onDelete}
+                        />
+                    )}
+                </div>
+            )}
         </div>
     )
 }

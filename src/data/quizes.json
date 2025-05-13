@@ -29,6 +29,7 @@
     "quiz3": {
         "name":"Quiz DIFICIL",
         "difficulty": "Hard",
+        "unlockRequirement": 3,
         "questions": [
             {
                 "name": "QUAL é essa ave",

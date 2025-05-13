@@ -5,21 +5,22 @@ import { getQuizzes } from '../../modules/dataFetcher';
 import { difficultyType, quizName } from '../../types';
 import useLoadedSave from '../../hooks/useLoadedSave';
 import { useMemo } from 'react';
+import useCurrentSave from '../../hooks/useCurrentSave';
 
 function QuizSelectPage() {
     useLoadedSave();
 
+    const currentSave = useCurrentSave();
+
     const quizes = useMemo(() => {
         const quizes = getQuizzes();
         return Object.keys(quizes).map((key, index) => {
-            const quiz = quizes[key as quizName];
+            const quizKey = key as quizName;
+            const quiz = quizes[quizKey];
 
             return <QuizSelect
                 key={index}
-                quizName={key}
-                title={quiz.name}
-                difficulty={quiz.difficulty as difficultyType}
-                totalQuestions={quiz.questions.length}
+                quiz={quizKey}
             />
         })
     }, [])

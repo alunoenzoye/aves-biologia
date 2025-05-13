@@ -24,8 +24,9 @@ export type saveSlots = "1" | "2" | "3";
 
 export type quizType = {
     name: string,
-    difficulty: difficultyType | string,
-    questions: [questionType]
+    difficulty: difficultyType,
+    questions: [questionType],
+    unlockRequirement?: number
 }
 
 export type quizLocationState = {

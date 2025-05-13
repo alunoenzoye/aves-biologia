@@ -8,6 +8,7 @@ import QuizEnd from "../../components/QuizEnd";
 import useQuiz from "../../hooks/useQuiz";
 import useQuestion from "../../hooks/useQuestion";
 import useLoadedSave from "../../hooks/useLoadedSave";
+import useCurrentSave from "../../hooks/useCurrentSave";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
@@ -87,6 +88,7 @@ function reducer(state: quizState, action: quizAction) {
 export function QuizPage() {
     useLoadedSave();
 
+    const currentSave = useCurrentSave();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -119,7 +121,13 @@ export function QuizPage() {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [location])
+    }, [location, navigate])
+
+    useEffect(() => {
+        if (currentSave?.isQuizCompleted(state.currentQuiz) === false) {
+            currentSave.completeQuiz(state.currentQuiz);
+        }
+    }, [state.hasWon, currentSave, state.currentQuiz])
     
 
     if (state.hasWon) {

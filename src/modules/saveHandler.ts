@@ -25,9 +25,7 @@ function interactWithPlayerSave<T>(key: string, callback: (playerSave: PlayerSav
     const playerSave = getPlayerSaveFromStorage(key);
 
     if (playerSave === null) {
-        console.error("The PlayerSave doesn't exist in the local storage");
-
-        return;
+        throw Error("The PlayerSave doesn't exist in the local storage");
     }
 
     return callback(playerSave)
@@ -40,13 +38,13 @@ class PlayerSaveModel {
         this.webStorageKey = key;
     }
 
-    private isAveUnlocked(ave: aveName) {
+    public isAveUnlocked(ave: aveName) {
         return interactWithPlayerSave<boolean>(this.webStorageKey, (playerSave) => {
             return (playerSave.unlockedAves.indexOf(ave) === -1) ? false : true;
         });
     }
 
-    private isQuizCompleted(quiz: quizName) {
+    public isQuizCompleted(quiz: quizName) {
         return interactWithPlayerSave<boolean>(this.webStorageKey, (playerSave) => {
             return (playerSave.completedQuizzes.indexOf(quiz) === -1) ? false : true;
         });
@@ -114,6 +112,7 @@ class SaveHandler {
 
     public createSaveInSlot(name: string, slot: saveSlots) {
         if (getPlayerSaveFromStorage(slot) !== null) {
+            console.error(`There's already a PlayerSave in slot ${slot}`);
             return;
         }
 
