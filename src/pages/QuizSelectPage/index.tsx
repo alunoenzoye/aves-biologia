@@ -30,9 +30,6 @@ function QuizSelectPage() {
                     to='/'
                     title='SELECIONE O QUIZ'
                 />
-                <div className={styles.filter_bar}>
-
-                </div>
                 <div className={styles.game_start_container}>
                     <div className={styles.game_btns}>
                         {quizes}
