@@ -1,0 +1,16 @@
+.ave_button {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+
+    &[data-locked="true"]:hover {
+        cursor: pointer;
+    }
+}
+
+.ave_info {
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}

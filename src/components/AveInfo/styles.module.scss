@@ -1,0 +1,18 @@
+.ave_info {
+    height: 100%;
+    width: 400px;
+    background-color: white;
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .statistics {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background-color: black;
+        color: white;
+    }
+}

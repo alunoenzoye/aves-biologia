@@ -1,12 +1,22 @@
 {
     "pomba": {
         "displayName": "Pomba",
+        "scientificName": "pombos",
         "hint": "É visto comumente em praças!",
+        "height": 100,
+        "mass": 1,
+        "habitat": "cidade",
+        "diet": "ornivoro",
         "description": "descrição teste"
     },
     "aveTeste": {
         "displayName": "Teste",
+        "scientificName": "missingno",
         "hint": "Teste Kk",
+        "height": 20,
+        "mass": 1,
+        "habitat": "teste",
+        "diet": "herbivoro",
         "description": "descrição teste"
     }
 }

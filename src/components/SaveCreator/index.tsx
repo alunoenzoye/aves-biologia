@@ -23,7 +23,7 @@ function SaveCreator({onCreate}: saveCreatorProps) {
     }
 
     return (
-        <div>
+        <form onSubmit={validateCreation}>
             <label>
                 Nome: <input 
                     type="text"
@@ -31,8 +31,8 @@ function SaveCreator({onCreate}: saveCreatorProps) {
                     onChange={updatePlayerName}
                 />
             </label>
-            <button onClick={validateCreation}>Criar</button>
-        </div>
+            <button>Criar</button>
+        </form>
     )
 }
 

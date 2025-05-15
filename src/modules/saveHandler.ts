@@ -38,6 +38,10 @@ class PlayerSaveModel {
         this.webStorageKey = key;
     }
 
+    public getWebStorageKey() {
+        return this.webStorageKey;
+    }
+
     public isAveUnlocked(ave: aveName) {
         return interactWithPlayerSave<boolean>(this.webStorageKey, (playerSave) => {
             return (playerSave.unlockedAves.indexOf(ave) === -1) ? false : true;

@@ -1,15 +1,27 @@
 import aves from "../data/aves.json";
 import quizzes from "../data/quizes.json";
 import { aveType, questionType, quizName, quizType } from "../types";
+import getImageUrl from "../util/getImageUrl";
 
-export function getAve(name: keyof typeof aves): aveType {
+type aveData = {
+    imagePath: string
+} & aveType;
+
+export function getAve(name: keyof typeof aves): aveData {
     const ave: aveType = aves[name];
 
     if (ave === undefined) {
         console.error(`Invalid ave name ${name}`);
     }
 
-    return {...ave};
+    return {
+        ...ave,
+        imagePath: getImageUrl(`aves/${name}`)
+    };
+}
+
+export function getAves(): typeof aves {
+    return {...aves};
 }
 
 export function getQuiz(name: quizName): quizType {

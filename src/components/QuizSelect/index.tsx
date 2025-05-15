@@ -25,45 +25,48 @@ function QuizSelect ({quiz}: quizSelectProps) {
 
     let quizClass;
 
-    switch(quizData.difficulty) {
-        case "Easy":
-            quizClass = styles.easy;
-            break;
-        case "Medium":
-            quizClass = styles.medium;
-            break;
-        case "Hard":
-            quizClass = styles.hard;
-            break;
-        default:
-            console.error("Invalid difficulty");
-            break
-    }
-
-    if (!isUnlocked && quizData.unlockRequirement !== undefined) {
-        return (
-            <div className={`${styles.quiz_select} ${styles.locked_quiz}`}>
-                <div className={styles.container}>
-                    <span>Quiz bloqueado!</span>
-                    <span>Complete mais {quizData?.unlockRequirement - totalCompletedQuizzes} quiz(s)</span>
-                </div>
-            </div>
-        )
+    if (isUnlocked) {
+        switch(quizData.difficulty) {
+            case "Easy":
+                quizClass = styles.easy;
+                break;
+            case "Medium":
+                quizClass = styles.medium;
+                break;
+            case "Hard":
+                quizClass = styles.hard;
+                break;
+            default:
+                console.error("Invalid difficulty");
+                break
+        }
+    } else {
+        quizClass = styles.locked_quiz;
     }
 
     return (
         <Link 
-            to='/quiz'
+            to={isUnlocked ? "/quiz" : ""}
             state={{quizName: quiz}}
             className={`${styles.quiz_select} ${quizClass}`}
+            data-locked={isUnlocked}
         >
             {quizCompleted && (
                 <img src={checkmark} alt="Completado" className={styles.check} />
             )}
             <div className={styles.container}>
-                <span className={styles.quiz_title}>{quizData.name}</span>
-                <DifficultyTag difficulty={quizData.difficulty} />
-                <span>{quizData.questions.length} questões</span>
+                {(!isUnlocked && quizData.unlockRequirement !== undefined) ? (
+                    <>
+                        <span>Quiz bloqueado!</span>
+                        <span>Complete mais {quizData?.unlockRequirement - totalCompletedQuizzes} quiz(s)</span>
+                    </>
+                ) : (
+                    <>
+                        <span className={styles.quiz_title}>{quizData.name}</span>
+                        <DifficultyTag difficulty={quizData.difficulty} />
+                        <span>{quizData.questions.length} questões</span>
+                    </>
+                )}
             </div>
         </Link>
     )

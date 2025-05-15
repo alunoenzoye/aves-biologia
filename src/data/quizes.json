@@ -2,6 +2,7 @@
     "quiz1": {
         "name":"Quiz das aves",
         "difficulty": "Medium",
+        "rewards": ["pomba"],
         "questions": [
             {
                 "name": "QUAL é essa ave",
@@ -13,6 +14,7 @@
     "quiz2": {
         "name":"QUIZ TESTE2",
         "difficulty": "Easy",
+        "rewards": [],
         "questions": [
             {
                 "name": "QUAL é essa ave",
@@ -29,7 +31,8 @@
     "quiz3": {
         "name":"Quiz DIFICIL",
         "difficulty": "Hard",
-        "unlockRequirement": 3,
+        "unlockRequirement": 2,
+        "rewards": ["aveTeste"],
         "questions": [
             {
                 "name": "QUAL é essa ave",

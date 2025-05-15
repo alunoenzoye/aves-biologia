@@ -5,6 +5,7 @@ import HomePage from '../pages/HomePage';
 import QuizSelectPage from '../pages/QuizSelectPage';
 import QuizPage from '../pages/QuizPage';
 import StartPage from '../pages/StartPage';
+import CatalogPage from '../pages/CatalogPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/home" element={<HomePage />} />
       <Route path="/quiz-select" element={<QuizSelectPage />}/>
       <Route path="/quiz" element={<QuizPage />}/>
+      <Route path="/avedex" element={<CatalogPage />}></Route>
     </Routes>
   )
 }

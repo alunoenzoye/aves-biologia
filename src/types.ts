@@ -6,9 +6,16 @@ export type AppPages = "Start" | "Catalog" | "QuizSelect" | "Game";
 export type aveName = keyof typeof aves;
 export type quizName = keyof typeof quizes;
 
+export type aveRewards = aveName[];
+
 export type aveType = {
     displayName: string,
+    scientificName: string,
     hint: string,
+    height: number,
+    mass: number
+    habitat: string
+    diet: string,
     description: string,
 }
 
@@ -27,6 +34,7 @@ export type quizType = {
     difficulty: difficultyType,
     questions: [questionType],
     unlockRequirement?: number
+    rewards: aveName[]
 }
 
 export type quizLocationState = {

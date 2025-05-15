@@ -1,6 +1,6 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { quizLocationState, quizName } from "../../types";
+import { aveRewards, quizLocationState, quizName } from "../../types";
 import QuizQuestion from "../../components/QuizQuestion";
 import styles from "./styles.module.scss";
 import { getQuiz } from "../../modules/dataFetcher";
@@ -123,17 +123,42 @@ export function QuizPage() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location, navigate])
 
-    useEffect(() => {
-        if (currentSave?.isQuizCompleted(state.currentQuiz) === false) {
-            currentSave.completeQuiz(state.currentQuiz);
+    const [aveRewards, setAveRewards] = useState([] as aveRewards);
+
+    const onRightAnswer = () => {
+        console.log(state.currentQuestion);
+        console.log(quizData.questions.length)
+        if (state.currentQuestion + 1 > (quizData.questions.length - 1)) {
+            console.log(quizData.rewards);
+            const rewards: aveRewards = []
+
+            quizData.rewards.forEach(ave => {
+                if (currentSave?.isAveUnlocked(ave) === false) {
+                    currentSave.unlockAve(ave);
+                    rewards.push(ave);
+                }
+            });
+
+            if (currentSave?.isQuizCompleted(state.currentQuiz) === false) {
+                currentSave.completeQuiz(state.currentQuiz);
+            }
+
+            console.log(rewards);
+
+            setAveRewards(rewards);
         }
-    }, [state.hasWon, currentSave, state.currentQuiz])
-    
+
+
+        dispatch({
+            type: CORRECT_ANSWER
+        })
+    }
 
     if (state.hasWon) {
         return (
             <QuizEnd 
                 won={true}
+                aveRewards={aveRewards}
                 rightQuestions={state.totalRightQuestions}
                 totalQuestions={quizData.questions.length}
                 onRestartClick={() => dispatch({type: RESTART})}
@@ -143,6 +168,7 @@ export function QuizPage() {
         return (
             <QuizEnd 
                 won={false}
+                aveRewards={aveRewards}
                 rightQuestions={state.totalRightQuestions}
                 totalQuestions={quizData.questions.length}
                 onRestartClick={() => dispatch({type: RESTART})}
@@ -154,7 +180,7 @@ export function QuizPage() {
         <div className={styles.page_container}>
             <h1>Questão atual {state.currentQuestion + 1}</h1>
             <QuizQuestion
-                onRightAnswer={() => dispatch({ type: CORRECT_ANSWER })}
+                onRightAnswer={onRightAnswer}
                 onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
                 rightAnswer={questionData.rightAnswer}
                 answers={questionData.answers}

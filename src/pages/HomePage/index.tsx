@@ -15,7 +15,7 @@ function HomePage() {
                 <h1 className="game_title">Quiz das Aves</h1>
                 <div className={styles.game_btns}>
                     <Link to="/quiz-select" className={styles.game_btn}>Jogar</Link>
-                    <Link to="/catalog" className={styles.game_btn}>Catálogo</Link>
+                    <Link to="/avedex" className={styles.game_btn}>AveDex</Link>
                     <button className={styles.game_btn} onClick={() => {
                         saveHandler.selectSlot(null);
                         forceUpdate();
