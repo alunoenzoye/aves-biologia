@@ -15,11 +15,8 @@ export type quizEndProps = {
 export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, aveRewards}: quizEndProps) {
     const textoTitulo = (won) ? "Parabens, você completou o quiz!" : "Não foi dessa vez, você errou!";
 
-    console.log(aveRewards);
-
     const rewards = useMemo(() => {
         const elements = aveRewards.map((ave, index) => {
-            console.log(ave);
             const aveData = getAve(ave);
 
             return (
@@ -33,7 +30,6 @@ export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, av
             )
         })
 
-        console.log(elements);
         return elements;
     }, [aveRewards])
 

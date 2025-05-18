@@ -20,7 +20,7 @@ function QuizSelect ({quiz}: quizSelectProps) {
 
     if (quizData.unlockRequirement !== undefined && currentSave !== null) {
         totalCompletedQuizzes = currentSave.getCompletedQuizzes().length;
-        isUnlocked = (totalCompletedQuizzes >= quizData.unlockRequirement) ? true : false
+        isUnlocked = totalCompletedQuizzes >= quizData.unlockRequirement;
     }
 
     let quizClass;

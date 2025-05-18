@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 const NAME_MAX_LENGTH = 30;
 
@@ -16,7 +16,9 @@ function SaveCreator({onCreate}: saveCreatorProps) {
         setPlayerName(newValue);
     }
 
-    const validateCreation = () => {
+    const validateCreation = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
         if (playerName.trim().length > 0) {
             onCreate(playerName);
         }

@@ -1,18 +1,18 @@
 import { useState } from "react";
 import styles from "./styles.module.scss";
 
-type quizStatusFilter = "none" | "locked" | "unlocked" | "completed";
+type catalogStatusFilters = "none" | "locked" | "unlocked"
 
-export interface quizSelectFilters {
+export interface catalogFilters {
     search: string,
-    statusFilter: quizStatusFilter
+    statusFilter: catalogStatusFilters
 }
 
-interface quizSelectFilterProps {
-    onSubmit: (filters: quizSelectFilters) => void,
+interface catalogFilterProps {
+    onSubmit: (filters: catalogFilters) => void,
 }
 
-function QuizSelectFilter({onSubmit}: quizSelectFilterProps) {
+function CatalogFilter({onSubmit}: catalogFilterProps) {
     const [search, setSearch] = useState("");
     const [statusFilter, setStatusFilter] = useState("none");
 
@@ -23,7 +23,7 @@ function QuizSelectFilter({onSubmit}: quizSelectFilterProps) {
 
                 onSubmit({
                     search: search,
-                    statusFilter: statusFilter as quizStatusFilter,
+                    statusFilter: statusFilter as catalogStatusFilters,
                 })
             }}>
                 <label>
@@ -35,14 +35,13 @@ function QuizSelectFilter({onSubmit}: quizSelectFilterProps) {
 
                             onSubmit({
                                 search: search,
-                                statusFilter: e.target.value as quizStatusFilter,
+                                statusFilter: e.target.value as catalogStatusFilters,
                             })
                         }}
                     >
                         <option value="none">Nenhum</option>
                         <option value="locked">Bloqueados</option>
                         <option value="unlocked">Desbloqueados</option>
-                        <option value="completed">Completados</option>
                     </select>
                 </label>
                 <label>
@@ -61,4 +60,4 @@ function QuizSelectFilter({onSubmit}: quizSelectFilterProps) {
     )
 }
 
-export default QuizSelectFilter;
+export default CatalogFilter;
