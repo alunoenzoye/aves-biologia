@@ -35,10 +35,10 @@ function CatalogPage() {
 
     const currentSave = useCurrentSave();
 
-    const [filter, setFilter] = useState({
+    const [filter, setFilter] = useState<catalogFilters>({
         search: "",
         statusFilter: "none"
-    } as catalogFilters)
+    })
     const [state, dispatch] = useReducer(reducer, {
         selectedAve: null,
     });

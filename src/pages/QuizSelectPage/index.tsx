@@ -13,10 +13,10 @@ function QuizSelectPage() {
 
     const currentSave = useCurrentSave();
 
-    const [filter, setFilter] = useState({
+    const [filter, setFilter] = useState<quizSelectFilters>({
         search: "",
         statusFilter: "none"
-    } as quizSelectFilters)
+    })
 
     const quizes = useMemo(() => {
         const quizes = getQuizzes();
