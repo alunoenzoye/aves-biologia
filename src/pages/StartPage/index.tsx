@@ -5,6 +5,7 @@ import { saveSlot } from "../../types";
 import { useNavigate } from "react-router";
 import useCurrentSave from "../../hooks/useCurrentSave";
 import SaveSwitcher from "../../components/SaveSwitcher";
+import { motion } from "motion/react";
 
 type pageState = {
     selectedSlot: saveSlot | null,
@@ -85,9 +86,17 @@ function StartPage() {
 
     return (
         <div className={styles.start_page}>
-            <h1 className={styles.start_page_title}>
+            <motion.h1 
+                className={styles.start_page_title}
+                initial={{
+                    scale: 0,
+                }}
+                animate={{
+                    scale: 1,
+                }}
+            >
                 NOVO JOGO
-            </h1>
+            </motion.h1>
             <div className={styles.saves_card}>
                 <SaveSwitcher 
                     slots={["1", "2", "3"]}

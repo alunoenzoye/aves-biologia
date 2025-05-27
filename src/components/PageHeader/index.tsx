@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import styles from "./styles.module.scss";
 import Icon from '@mdi/react';
 import { mdiArrowLeft } from '@mdi/js';
+import { motion as m } from "motion/react";
 
 export type pageHeaderProps = {
     to: string,
@@ -11,7 +12,20 @@ export type pageHeaderProps = {
 function PageHeader({to, title}: pageHeaderProps) {
     return (
         <div className={styles.page_header}>
-            <div className={styles.page_header_back_btn}>
+            <m.div 
+                className={styles.page_header_back_btn}
+                animate={{
+                    translateX: "0",
+                    opacity: 1,
+                }}
+                initial={{
+                    translateX: "40px",
+                    opacity: 0,
+                }}
+                transition={{
+                    delay: 0.05
+                }}
+            >
                 <Link 
                     to={to}
                     className={styles.back_link_container}
@@ -22,8 +36,20 @@ function PageHeader({to, title}: pageHeaderProps) {
                         color={"#2B2B34"}
                     />
                 </Link>
-            </div>
-            <h1 className={styles.page_header_title}>{title}</h1>
+            </m.div>
+            <m.h1 
+                className={styles.page_header_title}
+                animate={{
+                    translateX: "0",
+                    opacity: 1,
+                }}
+                initial={{
+                    translateX: "40px",
+                    opacity: 0,
+                }}
+            >
+                    {title}
+            </m.h1>
         </div>
     )
 }
