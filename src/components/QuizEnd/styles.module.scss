@@ -1,9 +1,3 @@
-@use '../../scss/nav-button' as *;
-
-.nav_button {
-    @include nav-button(10rem, 5rem);
-}
-
 .nav_button:hover {
     cursor: pointer;
 }

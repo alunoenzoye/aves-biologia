@@ -1,20 +1,18 @@
 import { useEffect, useReducer } from "react";
 import styles from "./styles.module.scss";
 import saveHandler from "../../modules/saveHandler";
-import { saveSlots } from "../../types";
-import SaveCreator from "../../components/SaveCreator";
-import SaveView from "../../components/SaveView";
+import { saveSlot } from "../../types";
 import { useNavigate } from "react-router";
 import useCurrentSave from "../../hooks/useCurrentSave";
-
+import SaveSwitcher from "../../components/SaveSwitcher";
 
 type pageState = {
-    selectedSlot: saveSlots | null,
+    selectedSlot: saveSlot | null,
 }
 
 type saveAction = {
     type: "SELECT",
-    slot: saveSlots | null
+    slot: saveSlot | null
 } | {
     type: "CREATE",
 } | {
@@ -87,41 +85,22 @@ function StartPage() {
 
     return (
         <div className={styles.start_page}>
-            <div className={styles.save_slots}>
-                <button onClick={() => dispatch({
-                    type: "SELECT",
-                    slot: "1",
-                })}>Save 1</button>
-                <button onClick={() => dispatch({
-                    type: "SELECT",
-                    slot: "2",
-                })}>Save 2</button>
-                <button onClick={() => dispatch({
-                    type: "SELECT",
-                    slot: "3",
-                })}>Save 3</button>
-            </div>
-            {state.selectedSlot === null ? (
-                <p>Nenhum save selecionado</p>
-            ) : (
-                <div>
-                    <button onClick={() => dispatch({
+            <h1 className={styles.start_page_title}>
+                NOVO JOGO
+            </h1>
+            <div className={styles.saves_card}>
+                <SaveSwitcher 
+                    slots={["1", "2", "3"]}
+                    selectedSlot={state.selectedSlot}
+                    onSwitch={(slot) => dispatch({
                         type: "SELECT",
-                        slot: null
-                    })}>Voltar</button>
-                    {saveHandler.getSaveOnSlot(state.selectedSlot) === null ? (
-                        <SaveCreator 
-                            onCreate={onCreate} 
-                        />
-                    ) : (
-                        <SaveView 
-                            selectedSlot={state.selectedSlot}
-                            onPickSave={onPickSave}
-                            onDelete={onDelete}
-                        />
-                    )}
-                </div>
-            )}
+                        slot: slot
+                    })}
+                    onPlay={onPickSave}
+                    onDelete={onDelete}
+                    onCreate={onCreate}
+                />
+            </div>
         </div>
     )
 }

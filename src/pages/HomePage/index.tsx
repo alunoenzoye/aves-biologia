@@ -14,7 +14,15 @@ function HomePage() {
             <div className={styles.game_start_container}>
                 <h1 className="game_title">Quiz das Aves</h1>
                 <div className={styles.game_btns}>
-                    <Link to="/quiz-select" className={styles.game_btn}>Jogar</Link>
+                    <Link to="/quiz-select" className={styles.game_btn}>
+                        <div className={styles.home_btn}>
+                            <div>
+                                <div>
+                                    <span>JOGAR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </Link>
                     <Link to="/avedex" className={styles.game_btn}>AveDex</Link>
                     <button className={styles.game_btn} onClick={() => {
                         saveHandler.selectSlot(null);

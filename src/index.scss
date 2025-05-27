@@ -1,0 +1,26 @@
+:root {
+  --palette-yellow: #FFDE5B;
+  --palette-black: #2B2B34;
+  --palette-gray: #847E7C;
+  --palette-gray-dark: #424242;
+  --palette-blue: #0D92FF;
+  --palette-beige: #F2E2CC;
+  --palette-white: #FFF7EB;
+  --palette-green: #86FF80;
+  --palette-red: #FF5151;
+  --palette-green-easy: #00FF6A;
+  --palette-orange-medium: #FF9E48;
+  --palette-red-hard: #FF7678;
+  --palette-blue-extreme: #65719E;
+
+  font-family: "Red Hat Display", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: --palette-black;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

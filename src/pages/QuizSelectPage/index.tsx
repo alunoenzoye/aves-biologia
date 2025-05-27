@@ -1,5 +1,5 @@
 import QuizSelect from '../../components/QuizSelect';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import PageHeader from '../../components/PageHeader';
 import { getQuiz, getQuizzes } from '../../modules/dataFetcher';
 import { quizName } from '../../types';

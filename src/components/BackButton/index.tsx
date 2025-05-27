@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { Link } from "react-router";
 import leftArrow from "../../assets/icons/arrow-left-circle.svg";
 

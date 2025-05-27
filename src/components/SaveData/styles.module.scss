@@ -1,0 +1,46 @@
+@use '../../scss/save_slot_button' as *;
+@use '../../scss/save-slot-btn-container' as *;
+
+.save_data {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .bird_list_container {
+        .bird_list {
+            border-radius: 0.5rem;
+            display: flex;
+            overflow: hidden;
+            list-style-type: none;
+            background-size: 10rem;
+            background-position-y: 30%;
+            padding: 0.5rem;
+
+            .bird_badge {
+                position: relative;
+                width: 1.5rem;
+                height: 1.5rem;
+
+                .bird_icon, .bird_icon_bg {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                };
+            }
+        }
+    }
+
+    .btns_container {
+        @include save_slot_btn_container;
+
+        .play_btn {
+            @include save_slot_btn(#86FF80)
+        }
+
+        .delete_btn {
+            @include save_slot_btn(#FF5151)
+        }
+    }
+}

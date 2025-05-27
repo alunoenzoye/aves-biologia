@@ -1,6 +1,6 @@
 import { Routes } from 'react-router';
 import { Route } from 'react-router';
-import './App.css';
+import './App.scss';
 import HomePage from '../pages/HomePage';
 import QuizSelectPage from '../pages/QuizSelectPage';
 import QuizPage from '../pages/QuizPage';

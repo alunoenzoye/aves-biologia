@@ -1,13 +1,19 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import styles from "./styles.module.scss";
 
 const NAME_MAX_LENGTH = 30;
 
-type saveCreatorProps = {
-    onCreate: (name: string) => void
+interface saveCreatorProps {
+    onCreate: (name: string) => void,
+    visible: boolean
 }
 
-function SaveCreator({onCreate}: saveCreatorProps) {
+function SaveCreator({onCreate, visible}: saveCreatorProps) {
     const [playerName, setPlayerName] = useState("");
+
+    if (!visible) {
+        return;
+    }
 
     const updatePlayerName = (e: ChangeEvent<HTMLInputElement>) => {
         let newValue = e.target.value;
@@ -25,16 +31,18 @@ function SaveCreator({onCreate}: saveCreatorProps) {
     }
 
     return (
-        <form onSubmit={validateCreation}>
-            <label>
-                Nome: <input 
+        <div className={styles.save_creator}>
+            <form className={styles.save_creator_form} onSubmit={validateCreation}>
+                <input 
+                    className={styles.save_creator_name_field}
                     type="text"
                     value={playerName}
                     onChange={updatePlayerName}
+                    placeholder="Digite o nome"
                 />
-            </label>
-            <button>Criar</button>
-        </form>
+                <button className={styles.save_creator_btn}>Criar</button>
+            </form>
+        </div>
     )
 }
 

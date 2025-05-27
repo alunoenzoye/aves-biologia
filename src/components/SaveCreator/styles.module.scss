@@ -1,0 +1,36 @@
+@use "../../scss/_save_slot_button.scss" as *;
+
+.save_creator {
+    padding: 0.5rem;
+
+    .save_creator_form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .save_creator_name_field {
+            padding: 0.5rem;
+            border: 2px solid var(--palette-white);
+            border-radius: 0.5rem;
+            color: var(--palette-white);
+            background: none;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+
+            &::placeholder {
+                color:var(--palette-gray)
+            }
+
+            &:focus {
+                outline: none;
+                border: 2px solid var(--palette-blue);
+            }
+        }
+
+        .save_creator_btn {
+            @include save_slot_btn(#FFF7EB);
+        }
+    }
+
+}

@@ -1,5 +1,5 @@
 import {BackButton, backButtonProps} from "../BackButton";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 export type pageHeaderProps = {
     title: string
