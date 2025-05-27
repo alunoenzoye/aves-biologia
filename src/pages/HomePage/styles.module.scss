@@ -1,14 +1,20 @@
+@use "../../scss/_drop-shadow.scss" as *;
+
 .page_container {
-    width: 100%;
-    height: 100%;
+    margin: 0px auto;
+    padding: 5rem 1rem 1rem 1rem;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 }
 
-.game_start_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 80%;
+.game_title {
+    font-size: 4rem;
+    color: var(--palette-black);
+    letter-spacing: 20%;
+    user-select: none;
 }
 
 .game_btns {
@@ -16,29 +22,50 @@
     flex-direction: column;
     justify-content: center;
 
+    flex-grow: 0;
     margin-top: 3rem;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .home_btn {
-    padding: 0 1rem;
-    background-color: var(--palette-black);
-    border-radius: 0.5rem;
+    background: none;
+    width: auto;
+    height: auto;
+    border: none;
+    pointer-events: all;
+    
 
-    div {
+    .home_btn_link {
+        @include drop-shadow;
+
+        overflow: hidden;
+        border-radius: 0.5rem;
+        display: block;
         padding: 0 1rem;
-        background-color: var(--palette-blue);
+        background-color: var(--palette-black);
+        border: none;
+        font-family: inherit;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         div {
-            width: 14rem;
-            background-color: var(--palette-yellow);
-            padding: 0.5rem 0.5rem;
+            background-color: var(--palette-blue);
+            padding: 0 1rem;
 
-            span {
-                color: var(--palette-black);
-                text-decoration: none !important;
-                font-weight: 800;
-                font-size: 2rem;
+            div {
+                width: 14rem;
+                background-color: var(--palette-yellow);
+                padding: 1rem;
+
+                span {
+                    color: var(--palette-black);
+                    font-size: 1.75rem;
+                    font-weight: 800;
+                    text-size-adjust: none;
+                    font-family: inherit;
+                }
             }
         }
     }

@@ -177,14 +177,18 @@ export function QuizPage() {
     }
 
     return (
-        <div className={styles.page_container}>
-            <h1>Questão atual {state.currentQuestion + 1}</h1>
-            <QuizQuestion
-                onRightAnswer={onRightAnswer}
-                onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
-                rightAnswer={questionData.rightAnswer}
-                answers={questionData.answers}
-            />
+        <div className={styles.quiz_page}>
+            <div className={styles.quiz_question_container}>
+                <i className={styles.quiz_question_number}>
+                    <span>{state.currentQuestion + 1}</span>
+                </i>
+                <QuizQuestion
+                    onRightAnswer={onRightAnswer}
+                    onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
+                    rightAnswer={questionData.rightAnswer}
+                    answers={questionData.answers}
+                />
+            </div>
         </div>
     )
 }

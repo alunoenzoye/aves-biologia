@@ -19,7 +19,7 @@ export type aveType = {
     description: string,
 }
 
-export type difficultyType = "Easy" | "Medium" | "Hard";
+export type difficultyType = "Easy" | "Medium" | "Hard" | "Extreme";
 
 export type questionType = {
     name: string,

@@ -1,4 +1,30 @@
-.page_container {
+.quiz_page {
     width: 100%;
     height: 100%;
+
+    padding: 1rem;
+}
+
+.quiz_question_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz_question_number {
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    background-color: var(--palette-yellow);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--palette-black);
+    }
 }

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @mixin save_slot_btn($backgroundColor) {
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -11,7 +13,7 @@
     font-weight: 800;
 
     &:hover {
-        background-color: desaturate(darken($backgroundColor, 10%), 30%);
+        background-color: color.adjust(color.adjust($backgroundColor, $lightness: -10%), $saturation: -30%);
         cursor: pointer;
     }
 

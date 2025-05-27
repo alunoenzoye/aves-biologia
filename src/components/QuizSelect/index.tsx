@@ -1,16 +1,24 @@
 import { Link } from 'react-router';
-import {DifficultyTag} from '../DifficultyTag';
 import styles from './styles.module.scss';
 import checkmark from '../../assets/icons/check.svg';
 import { quizName } from '../../types';
 import useQuiz from '../../hooks/useQuiz';
 import useCurrentSave from '../../hooks/useCurrentSave';
+import { mdiCheckCircle, mdiLock } from '@mdi/js';
+import Icon from '@mdi/react';
 
 export type quizSelectProps = {
     quiz: quizName,
 }
 
-function QuizSelect ({quiz}: quizSelectProps) {
+const difficultyTranslations = {
+    "Easy": "Fácil",
+    "Medium": "Médio",
+    "Hard": "Difícil",
+    "Extreme": "Extremo",
+}
+
+function QuizSelect({ quiz }: quizSelectProps) {
     const quizData = useQuiz(quiz)
     const currentSave = useCurrentSave();
     const quizCompleted = currentSave?.isQuizCompleted(quiz) === true;
@@ -23,49 +31,46 @@ function QuizSelect ({quiz}: quizSelectProps) {
         isUnlocked = totalCompletedQuizzes >= quizData.unlockRequirement;
     }
 
-    let quizClass;
-
-    if (isUnlocked) {
-        switch(quizData.difficulty) {
-            case "Easy":
-                quizClass = styles.easy;
-                break;
-            case "Medium":
-                quizClass = styles.medium;
-                break;
-            case "Hard":
-                quizClass = styles.hard;
-                break;
-            default:
-                console.error("Invalid difficulty");
-                break
-        }
-    } else {
-        quizClass = styles.locked_quiz;
-    }
-
     return (
-        <Link 
+        <Link
             to={isUnlocked ? "/quiz" : ""}
-            state={{quizName: quiz}}
-            className={`${styles.quiz_select} ${quizClass}`}
-            data-locked={isUnlocked}
+            state={{ quizName: quiz }}
+            className={styles.quiz_select}
+            data-locked={!isUnlocked}
+            data-difficulty={quizData.difficulty}
         >
-            {quizCompleted && (
-                <img src={checkmark} alt="Completado" className={styles.check} />
-            )}
-            <div className={styles.container}>
-                {(!isUnlocked && quizData.unlockRequirement !== undefined) ? (
+            <div className={styles.quiz_select_header}>
+                <h1 className={styles.quiz_select_title}>
+                    {(isUnlocked) ? quizData.name : "???"}
+                </h1>
+                {quizCompleted && (
+                    <Icon 
+                        path={mdiCheckCircle} 
+                        color={"#2B2B34"}
+                        size="1.5rem"
+                    />
+                )}
+                {!isUnlocked && (
+                    <Icon 
+                        path={mdiLock} 
+                        size={"1.5rem"}
+                        color={"#847E7C"}
+                    />
+                )}
+            </div>
+            <div className={styles.quiz_select_content}>
+                {isUnlocked && (
                     <>
-                        <span>Quiz bloqueado!</span>
-                        <span>Complete mais {quizData?.unlockRequirement - totalCompletedQuizzes} quiz(s)</span>
+                    <div className={styles.difficulty_tag}>
+                        <span>{difficultyTranslations[quizData.difficulty]}</span>
+                    </div>
+                    <p className={styles.total_questions_text}>{quizData.questions.length} questões</p>
                     </>
-                ) : (
-                    <>
-                        <span className={styles.quiz_title}>{quizData.name}</span>
-                        <DifficultyTag difficulty={quizData.difficulty} />
-                        <span>{quizData.questions.length} questões</span>
-                    </>
+                )}
+                {(!isUnlocked && quizData.unlockRequirement !== undefined) && (
+                    <div className={styles.locked_container}>
+                        <span>Complete mais {quizData.unlockRequirement - totalCompletedQuizzes} quiz(s)</span>
+                    </div>
                 )}
             </div>
         </Link>

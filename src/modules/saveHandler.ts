@@ -31,7 +31,20 @@ function interactWithPlayerSave<T>(key: string, callback: (playerSave: PlayerSav
     return callback(playerSave)
 }
 
-class PlayerSaveModel {
+export interface IPlayerSaveModel {
+    getWebStorageKey: () => saveSlots,
+    isAveUnlocked: (ave: aveName) => boolean,
+    isQuizCompleted: (quiz: quizName) => boolean,
+    getUnlockedAves: () => aveName[],
+    getCompletedQuizzes: () => quizName[],
+    setName: (name: string) => void,
+    getName: () => string,
+    unlockAve: (ave: aveName) => void,
+    completeQuiz: (quiz: quizName) => void,
+    delete: () => void
+}
+
+class PlayerSaveModel implements IPlayerSaveModel {
     private webStorageKey: saveSlots;
 
     constructor (key: saveSlots) {

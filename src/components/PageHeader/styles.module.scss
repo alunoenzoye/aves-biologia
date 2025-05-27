@@ -1,34 +1,30 @@
-.header {
+.page_header {
     width: 100%;
+    height: auto;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
 }
 
-.center_title {
-    margin-left: 10px;
-    margin-right: 74px;
-    width: 100%;
+.page_header_title {
+    font-size: 2.5rem;
+    text-align: start;
+    color: var(--palette-black)
+}
+
+.back_link_container {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.page_header_back_btn {
+    width: 2rem;
+    height: 2rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@keyframes animate_title {
-    from {
-        transform: scale(95%);
-    }
-    to {
-        transform: scale(100%);
-    }
-}
-
-.header_title {
-    font-size: 3rem;
-    padding: 0.25rem;
-    font-weight: 800;
-    background-color: white;
-    user-select: none;
-    outline: 0.25rem solid black;
-
-    animation: animate_title 0.8s linear infinite;
 }

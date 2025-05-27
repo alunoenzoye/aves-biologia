@@ -1,17 +1,29 @@
-import {BackButton, backButtonProps} from "../BackButton";
+import { Link } from "react-router";
 import styles from "./styles.module.scss";
+import Icon from '@mdi/react';
+import { mdiArrowLeft } from '@mdi/js';
 
 export type pageHeaderProps = {
+    to: string,
     title: string
-} & backButtonProps;
+}
 
 function PageHeader({to, title}: pageHeaderProps) {
     return (
-        <div className={styles.header}>
-            <BackButton to={to} />
-            <div className={styles.center_title}>
-                <span className={styles.header_title}>{title}</span>
+        <div className={styles.page_header}>
+            <div className={styles.page_header_back_btn}>
+                <Link 
+                    to={to}
+                    className={styles.back_link_container}
+                >
+                    <Icon 
+                        path={mdiArrowLeft}
+                        size={"2rem"}
+                        color={"#2B2B34"}
+                    />
+                </Link>
             </div>
+            <h1 className={styles.page_header_title}>{title}</h1>
         </div>
     )
 }

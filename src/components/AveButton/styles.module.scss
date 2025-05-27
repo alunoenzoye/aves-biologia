@@ -1,16 +1,58 @@
-.ave_button {
-    width: 200px;
-    height: 200px;
-    background-color: white;
+@use "../../scss/_drop-shadow.scss" as *;
 
-    &[data-locked="true"]:hover {
+.ave_button {
+    @include drop-shadow;
+
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: fit-content;
+    background-color: var(--palette-black);
+    font-family: inherit;
+
+    &:hover {
         cursor: pointer;
+    }
+
+    &[data-locked="true"] {
+        pointer-events: none;
+
+        .ave_button_footer {
+            background-color: var(--palette-gray-dark);
+            color: var(--palette-white);
+        }
     }
 }
 
-.ave_info {
-    img {
-        width: 150px;
-        height: 150px;
-    }
+.ave_button_icon_container {
+    padding: 0.5rem;
+}
+
+.ave_button_icon_content {
+    background-color: var(--palette-gray-dark);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ave_button_icon {
+    width: 100%;
+    height: 100%;
+    color: var(--palette-black);
+}
+
+.ave_button_footer {
+   padding: 0.25rem; 
+   background-color: var(--palette-yellow);
+}
+
+.ave_button_title {
+    color: var(--palette-black);
+    font-size: 1.25rem;
+    font-weight: 800;
+    user-select: none;
 }

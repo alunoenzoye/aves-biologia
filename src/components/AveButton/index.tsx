@@ -2,6 +2,8 @@ import useAve from "../../hooks/useAve";
 import useCurrentSave from "../../hooks/useCurrentSave";
 import { aveName } from "../../types";
 import styles from "./styles.module.scss";
+import Icon from '@mdi/react';
+import { mdiLock } from '@mdi/js';
 
 type aveButtonProps = {
     ave: aveName
@@ -18,18 +20,26 @@ function AveButton({ave, onClick}: aveButtonProps) {
         <button 
             className={styles.ave_button} 
             onClick={(isAveUnlocked) ? onClick : undefined} 
-            data-locked={isAveUnlocked}
+            data-locked={!isAveUnlocked}
         >
-            {isAveUnlocked ? (
-                <div className={styles.ave_info}>
-                    <h1>{aveData.displayName}</h1>
-                    <img src={aveData.imagePath} alt="" />
+            <div className={styles.ave_button_icon_container}>
+                <div className={styles.ave_button_icon_content}>
+                    {isAveUnlocked ? (
+                        <img className={styles.ave_button_icon} src={aveData.imagePath} alt={aveData.displayName} />
+                    ) : (
+                        <Icon 
+                            path={mdiLock} 
+                            size={"5rem"}
+                            color={"#847E7C"}
+                        />
+                    )}
                 </div>
-            ) : (
-                <>
-                    <span>Ave bloqueada!</span>
-                </>
-            )}
+            </div>
+            <div className={styles.ave_button_footer}>
+                <span className={styles.ave_button_title}>
+                    {isAveUnlocked ? aveData.displayName : "???"}
+                </span>
+            </div>
         </button>
     )
 }

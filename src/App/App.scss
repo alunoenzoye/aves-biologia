@@ -9,7 +9,8 @@
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   margin: 0 auto;
   text-align: center;
   background-color: var(--palette-beige);

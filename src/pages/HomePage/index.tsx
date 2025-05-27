@@ -11,23 +11,45 @@ function HomePage() {
 
     return (
         <div className={styles.page_container}>
-            <div className={styles.game_start_container}>
-                <h1 className="game_title">Quiz das Aves</h1>
-                <div className={styles.game_btns}>
-                    <Link to="/quiz-select" className={styles.game_btn}>
-                        <div className={styles.home_btn}>
+            <h1 className={styles.game_title}>Quiz das Aves</h1>
+            <div className={styles.game_btns}>
+                <div className={styles.home_btn}>
+                    <Link 
+                        to="/quiz-select" 
+                        style={{textDecoration: "none"}}
+                        className={styles.home_btn_link}
+                    >
+                        <div>
                             <div>
-                                <div>
-                                    <span>JOGAR</span>
-                                </div>
+                                <span>JOGAR</span>
                             </div>
                         </div>
                     </Link>
-                    <Link to="/avedex" className={styles.game_btn}>AveDex</Link>
-                    <button className={styles.game_btn} onClick={() => {
+                </div>
+                <div className={styles.home_btn}>
+                    <Link 
+                        to="/avedex" 
+                        style={{textDecoration: "none"}}
+                        className={styles.home_btn_link}
+                    >
+                        <div>
+                            <div>
+                                <span>AVEDEX</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className={styles.home_btn}>
+                    <button className={styles.home_btn_link} onClick={() => {
                         saveHandler.selectSlot(null);
                         forceUpdate();
-                    }}>Sair</button>
+                    }}>
+                        <div>
+                            <div>
+                                <span>SAIR</span>
+                            </div>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>

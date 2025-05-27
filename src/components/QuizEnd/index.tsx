@@ -3,6 +3,8 @@ import styles from "./styles.module.scss";
 import { aveRewards } from "../../types";
 import { useMemo } from "react";
 import { getAve } from "../../modules/dataFetcher";
+import Icon from "@mdi/react";
+import { mdiCheckBold } from "@mdi/js";
 
 export type quizEndProps = {
     won: boolean,
@@ -35,9 +37,19 @@ export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, av
 
     return (
         <div className={styles.quiz_end}>
+            <h1 className={styles.end_title}>Fim de jogo!</h1>
             <div className={styles.status_container}>
-                <h1>{textoTitulo}</h1>
-                <span>Questões acertadas: {rightQuestions}/{totalQuestions}</span>
+                <h2 className={styles.result_status}>{textoTitulo}</h2>
+                <div className={styles.game_stats}>
+                    <div className={styles.game_stat}>
+                        <Icon 
+                            path={mdiCheckBold}
+                            size={"1.5rem"}
+                            color={"#424242"}
+                        />
+                        <span>{rightQuestions} / {totalQuestions}</span>
+                    </div>
+                </div>
             </div>
             {(aveRewards.length > 0) && (
                 <div className={styles.rewarded_aves}>
@@ -48,8 +60,14 @@ export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, av
                 </div>
             )}
             <div className={styles.button_container}>
-                <button onClick={onRestartClick}>Reiniciar</button>
-                <Link draggable={false} to="/quiz-select" className={styles.nav_button}>Voltar</Link>
+                <button className={styles.quiz_end_btn} onClick={onRestartClick}>Reiniciar</button>
+                <Link 
+                    className={styles.quiz_end_btn} 
+                    draggable={false} 
+                    to="/quiz-select"
+                >
+                        Voltar
+                </Link>
             </div>
         </div>
     )

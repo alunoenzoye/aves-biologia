@@ -1,0 +1,31 @@
+.ave_info_data {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.ave_info_data_title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+        color: var(--palette-gray);
+        font-weight: 600;
+    }
+}
+
+.ave_info_data_field {
+    padding: 0.5rem;
+    border: 2px solid var(--palette-gray);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        color: var(--palette-gray-dark);
+        font-weight: 800;
+        font-size: 1rem;
+    }
+}

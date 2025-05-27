@@ -80,11 +80,11 @@ function QuizSelectPage() {
                     to='/'
                     title='SELECIONE O QUIZ'
                 />
-                <QuizSelectFilter 
-                    onSubmit={(newFilter) => setFilter(newFilter)}
-                />
-                <div className={styles.game_start_container}>
-                    <div className={styles.game_btns}>
+                <div className={styles.quiz_select}>
+                    <QuizSelectFilter 
+                        onSubmit={(newFilter) => setFilter(newFilter)}
+                    />
+                    <div className={styles.quiz_select_btns}>
                         {quizes}
                     </div>
                 </div>
