@@ -40,12 +40,12 @@ function AveInfo({ave, onClose}: aveInfoProps) {
                 <div className={styles.ave_info_data}>
                     <AveInfoField 
                         title="MASSA"
-                        content={`${aveData.mass} kg`}
+                        content={aveData.mass}
                         iconPath={mdiWeight}
                     />
                     <AveInfoField 
                         title="ALTURA"
-                        content={`${aveData.height} cm`}
+                        content={aveData.height}
                         iconPath={mdiRuler}
                     />
                     <AveInfoField 

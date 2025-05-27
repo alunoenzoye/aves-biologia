@@ -4,7 +4,8 @@ import { aveType, questionType, quizName, quizType } from "../types";
 import getImageUrl from "../util/getImageUrl";
 
 type aveData = {
-    imagePath: string
+    imagePath: string,
+    silhouetteImagePath: string
 } & aveType;
 
 export function getAve(name: keyof typeof aves): aveData {
@@ -16,7 +17,8 @@ export function getAve(name: keyof typeof aves): aveData {
 
     return {
         ...ave,
-        imagePath: getImageUrl(`aves/${name}`)
+        imagePath: getImageUrl(`aves/${name}`),
+        silhouetteImagePath: getImageUrl(`aves/${name}-silhueta`)
     };
 }
 

@@ -9,6 +9,7 @@
 
     .bird_list_container {
         .bird_list {
+            flex-wrap: wrap;
             border-radius: 0.5rem;
             display: flex;
             overflow: hidden;

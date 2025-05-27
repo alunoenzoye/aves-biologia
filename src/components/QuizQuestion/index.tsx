@@ -35,7 +35,7 @@ export function QuizQuestion({onRightAnswer, onWrongAnswer, rightAnswer, answers
         <div className={styles.quiz_question}>
             <h1 className={styles.question_title}>Qual é essa ave?</h1>
             <div className={styles.question_ave_icon}>
-                <img src={rightAveData.imagePath} alt={rightAveData.displayName} />
+                <img src={rightAveData.silhouetteImagePath} alt={rightAveData.displayName} />
             </div>
             <div className={styles.question_container_background}>
                 <div className={styles.blue_div}>

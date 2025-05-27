@@ -20,17 +20,35 @@
 .aves_container {
     padding: 0.5rem;
     background-color: var(--palette-white);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
     gap: 0.5rem;
-    flex-grow: 1;
     overflow-y: auto;
+    flex-grow: 1;
 }
 
 .ave_info_container {
     width: 100vw;
     height: 100vh;
     background-color: rgba(#424242, 0.6);
-    position: absolute;
+    position: fixed;
     backdrop-filter: blur(10px);
+}
+
+@media (width > 32rem) {
+    .aves_container {
+        grid-template-columns: repeat(3, 3fr);
+    }
+}
+
+@media (width > 45rem) {
+    .aves_container {
+        grid-template-columns: repeat(4, 4fr);
+    }
+}
+
+@media (width > 62rem) {
+    .aves_container {
+        grid-template-columns: repeat(5, 5fr);
+    }
 }

@@ -12,9 +12,9 @@ export type aveType = {
     displayName: string,
     scientificName: string,
     hint: string,
-    height: number,
-    mass: number
-    habitat: string
+    height: string | string,
+    mass: string | string,
+    habitat: string,
     diet: string,
     description: string,
 }

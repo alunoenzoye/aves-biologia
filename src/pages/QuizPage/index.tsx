@@ -98,7 +98,7 @@ export function QuizPage() {
             currentQuestion: 0,
             hasFailed: false,
             hasWon: false,
-            currentQuiz: "quiz2",
+            currentQuiz: "quiz1",
             totalRightQuestions: 0
         }
     )

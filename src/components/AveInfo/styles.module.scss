@@ -7,6 +7,7 @@
     background-color: var(--palette-yellow);
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .ave_info_header {
@@ -71,6 +72,15 @@
 
 .ave_info_data {
     display: grid;
-    grid-template-columns: 10rem 10rem;
+    grid-template-columns: repeat(2, 2fr);
     gap: 0.5rem;
+}
+
+@media (width > 40rem) {
+    .ave_info_icon {
+        img {
+            width: 20rem;
+            height: 20rem;
+        }
+    }
 }

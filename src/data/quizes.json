@@ -2,42 +2,29 @@
     "quiz1": {
         "name":"Quiz das aves",
         "difficulty": "Medium",
-        "rewards": ["pomba"],
+        "rewards": [
+            "tucano",
+            "pinguim",
+            "pica-pau",
+            "pelicano",
+            "pavao",
+            "galinha",
+            "flamingo",
+            "falcao",
+            "ema",
+            "corvo",
+            "coruja",
+            "casuar",
+            "canario",
+            "beija-flor",
+            "avestruz",
+            "arara"
+        ],
         "questions": [
             {
                 "name": "QUAL é essa ave",
-                "rightAnswer": "pomba",
-                "answers": ["pomba", "aveTeste"]
-            }
-        ]
-    },
-    "quiz2": {
-        "name":"QUIZ TESTE2",
-        "difficulty": "Easy",
-        "rewards": [],
-        "questions": [
-            {
-                "name": "QUAL é essa ave",
-                "rightAnswer": "pomba",
-                "answers": ["pomba", "aveTeste"]
-            },
-            {
-                "name": "Sla",
-                "rightAnswer": "aveTeste",
-                "answers": ["pomba", "aveTeste"]
-            }
-        ]
-    },
-    "quiz3": {
-        "name":"Quiz DIFICIL",
-        "difficulty": "Hard",
-        "unlockRequirement": 2,
-        "rewards": ["aveTeste"],
-        "questions": [
-            {
-                "name": "QUAL é essa ave",
-                "rightAnswer": "pomba",
-                "answers": ["pomba", "aveTeste"]
+                "rightAnswer": "tucano",
+                "answers": ["tucano", "pica-pau"]
             }
         ]
     }

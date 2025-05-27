@@ -1,22 +1,162 @@
 {
-    "pomba": {
-        "displayName": "Pomba",
-        "scientificName": "pombos",
-        "hint": "É visto comumente em praças!",
-        "height": 100,
-        "mass": 1,
-        "habitat": "cidade",
-        "diet": "ornivoro",
-        "description": "descrição teste"
+    "arara": {
+        "displayName": "Arara-vermelha",
+        "scientificName": "Ara chloropterus",
+        "hint": "Têm bicos extremamente fortes, capazes de quebrar sementes duras e até cascas de coco.",
+        "height": "80-100 cm",
+        "mass": "0.9-1.5 kg",
+        "habitat": "Florestas tropicais",
+        "diet": "Frugívoro",
+        "description": "A arara é uma ave exótica e inteligente pertencente à família dos psitacídeos. Vive principalmente em florestas tropicais da América do Sul, como a Amazônia e o Pantanal. É conhecida por sua beleza, inteligência e vocalização intensa — podendo até imitar sons humanos. Araras são frugívoras, ou seja, alimentam-se principalmente de frutas, sementes e castanhas. Também podem consumir flores, brotos e, ocasionalmente, pequenos insetos. Em cativeiro, sua dieta deve ser balanceada, com frutas frescas, vegetais, ração específica e suplementação de cálcio para manter o bico e penas saudáveis."
     },
-    "aveTeste": {
-        "displayName": "Teste",
-        "scientificName": "missingno",
-        "hint": "Teste Kk",
-        "height": 20,
-        "mass": 1,
-        "habitat": "teste",
-        "diet": "herbivoro",
-        "description": "descrição teste"
+    "avestruz": {
+        "displayName": "Avestruz",
+        "scientificName": "Struthio camelus ",
+        "hint": "Os ovos são grandes e pesados, chegando a 1,8 kg.",
+        "height": "Até 2.7 m",
+        "mass": "Até 150 kg",
+        "habitat": "Savanas, desertos",
+        "diet": "Onívoro",
+        "description": " Avestruz é a maior ave do mundo, podendo atingir até 2,7 metros de altura e pesar até 150 kg. São aves terrestres, incapazes de voar, mas excelentes corredoras, capazes de atingir velocidades de até 70 km/h. São originárias da África e podem ser encontradas em diversos ambientes secos, como savanas e desertos. Avestruz é um animal onívoro, ou seja, se alimenta tanto de vegetais quanto de animais. Sua dieta inclui gramíneas, raízes, sementes, flores, frutos, folhas, arbustos e, ocasionalmente, insetos, pequenos répteis e roedores. Em cativeiro, são alimentadas com ração balanceada e pasto verde."
+    },
+    "beija-flor": {
+        "displayName": "Beija-flor",
+        "scientificName": "Trochilidae",
+        "hint": "É a menor ave do mundo e a única capaz de voar para trás. Suas asas batem tão rápido que produzem um zumbido no ar.",
+        "height": "6-13 cm",
+        "mass": "2-6 g",
+        "habitat": "Florestas tropicais",
+        "diet": "Nectarívoros",
+        "description": "O beija-flor, também conhecido como colibri, é nativo das Américas, principalmente da América do Sul e Central. Vive em florestas tropicais, jardins e áreas com muitas flores. É a única ave que pode pairar no ar, voar para trás e até para os lados, graças à incrível velocidade de batimento das asas, algumas espécies chegam a 80 batidas por segundo. São nectarívoros, alimentando-se principalmente do néctar das flores, o que os torna importantes polinizadores. Também consomem pequenos insetos e aranhas para obter proteínas. Apesar do tamanho diminuto, são territorialistas e extremamente ágeis, defendendo fontes de néctar com bravura contra outras aves ou mesmo insetos."
+    },
+    "canario": {
+        "displayName": "Canário",
+        "scientificName": "Serinus canaria domestica",
+        "hint": "É uma das aves canoras mais populares do mundo, famosa pelo canto melodioso e criado amplamente como ave de estimação.",
+        "height": "12-15 cm",
+        "mass": "15-25 g",
+        "habitat": "Campos secos",
+        "diet": "Granívora",
+        "description": "O canário é uma ave passeriforme originária das Ilhas Canárias, Madeira e Açores. Foi domesticado pelos europeus no século XVI e, desde então, passou por intensos cruzamentos seletivos, resultando em diversas linhagens criadas por canto, cor ou porte. É uma ave granívora, ou seja, se alimenta principalmente de sementes, especialmente alpiste, painço e niger. Também consome frutas, verduras e suplementos para manter a cor e a saúde. O macho é conhecido pelo canto alegre e melódico, que pode variar bastante entre as raças. Os canários são dóceis, pequenos e adaptáveis, sendo criados amplamente como aves de estimação. Apesar de sua aparência delicada, são aves resistentes, desde que tenham boa alimentação, espaço e higiene."
+    },
+    "casuar": {
+        "displayName": "Casuar",
+        "scientificName": "Casuarius",
+        "hint": "É uma ave grande, conhecida pelo casco duro no topo da cabeça e pelas garras afiadas que usa para defesa.",
+        "height": "1.5-1.8 m",
+        "mass": "25-60 kg",
+        "habitat": "Florestas tropicais",
+        "diet": "Onívoro",
+        "description": "O casuar é nativo das florestas tropicais da Nova Guiné, norte da Austrália e ilhas próximas. É uma das maiores aves não voadoras do mundo, ao lado da ema e do avestruz. Possui um capacete ósseo na cabeça que ajuda a proteger contra galhos e arbustos durante a movimentação na mata. Suas poderosas pernas terminam em garras afiadas que podem causar ferimentos graves, especialmente na garra interna, que é longa e curvada. É uma ave onívora, alimentando-se de frutas, sementes, insetos, pequenos vertebrados e fungos. Costuma forragear no chão da floresta, usando o bico para cavar. Apesar de seu tamanho e força, é uma ave tímida, que evita contato com humanos, mas pode ser agressiva se ameaçada."
+    },
+    "coruja": {
+        "displayName": "Coruja",
+        "scientificName": "Strigiformes",
+        "hint": "É uma ave de rapina noturna, famosa pela cabeça giratória e olhos grandes. Simboliza sabedoria em muitas culturas.",
+        "height": "20-70 cm",
+        "mass": "0.1-2.5 kg",
+        "habitat": "Vários",
+        "diet": "Carnívoro",
+        "description": "A coruja é uma ave de rapina, conhecida por seus hábitos noturnos e audição extremamente aguçada. Está presente em todos os continentes, exceto na Antártida. Vivem em florestas, campos abertos, desertos e até em áreas urbanas. As corujas possuem olhos grandes e fixos, voltados para frente, o que lhes dá excelente percepção de profundidade. Para compensar a limitação do campo de visão, elas podem girar o pescoço em até 270 graus. São carnívoras, alimentando-se de roedores, insetos, pequenos répteis, aves e até peixes, dependendo da espécie. Caçam à noite, usando sua audição altamente desenvolvida para localizar presas mesmo no escuro total. Engolem suas presas inteiras e depois regurgitam as partes indigestas (como ossos e pelos) em forma de pelotas."
+    },
+    "corvo": {
+        "displayName": "Corvo",
+        "scientificName": "Corvus",
+        "hint": "É uma das aves mais inteligentes do mundo, capaz de usar ferramentas, resolver problemas complexos e até imitar sons, incluindo a fala humana.",
+        "height": "50-70 cm",
+        "mass": "0.5-1.5 kg",
+        "habitat": "Vários",
+        "diet": "Onívoro",
+        "description": "O corvo pertence ao gênero Corvus, dentro da família dos corvídeos, e é encontrado em praticamente todos os continentes, exceto na América do Sul e na Antártida. Vive em florestas, montanhas, campos abertos e também em ambientes urbanos. Conhecido por sua inteligência excepcional, o corvo é capaz de usar ferramentas, reconhecer rostos humanos, trabalhar em equipe e planejar ações futuras. Em algumas culturas, é símbolo de sabedoria ou mistério. É uma ave onívora, com dieta extremamente variada. Alimenta-se de frutas, sementes, grãos, pequenos animais, insetos, carniça e restos deixados por humanos. Sua adaptabilidade alimentar é um dos motivos de seu sucesso em diversos habitats. É também conhecido por emitir uma variedade de sons e vocalizações, alguns muito complexos. Algumas espécies podem até imitar a fala humana com precisão impressionante."
+    },
+    "ema": {
+        "displayName": "Ema",
+        "scientificName": "Rhea americana",
+        "hint": "É a maior ave nativa da América do Sul e, apesar de não voar, corre a grandes velocidades. É parente do avestruz.",
+        "height": "1.5-1.7 m",
+        "mass": "20-40 kg",
+        "habitat": "Campos abertos",
+        "diet": "Onívoro",
+        "description": "A ema é uma ave não voadora, encontrada em campos abertos e áreas de cerrado da América do Sul, especialmente no Brasil, Argentina, Paraguai e Bolívia. É a maior ave das Américas e a segunda maior do mundo, atrás apenas do avestruz. Apesar de não voar, a ema tem pernas longas e fortes, sendo excelente corredora — pode alcançar até 60 km/h. Usa a corrida como principal defesa contra predadores. É uma ave onívora, com dieta variada: alimenta-se de folhas, sementes, frutos, insetos, pequenos vertebrados e até animais mortos. Ajuda na dispersão de sementes, sendo importante para o ecossistema. Curiosamente, quem choca os ovos e cuida dos filhotes é o macho, que também pode criar filhotes de diferentes fêmeas em um só ninho."
+    },
+    "falcao": {
+        "displayName": "Falcão",
+        "scientificName": "Falco",
+        "hint": "É uma ave de rapina conhecida por sua visão aguçada, velocidade e habilidades de caça. Algumas espécies podem atingir mais de 300 km/h em voo de mergulho.",
+        "height": "25-60 cm",
+        "mass": "0.5-1.5 kg",
+        "habitat": "Vários",
+        "diet": "Carnívoro",
+        "description": "O falcão é uma ave selvagem de hábitos diurnos, pertencente à família dos falconídeos. É encontrado em diversos habitats ao redor do mundo, incluindo florestas, campos abertos, desertos e até áreas urbanas. Algumas espécies, como o falcão-peregrino, são amplamente distribuídas e reconhecidas por sua impressionante velocidade. Os falcões são carnívoros e predadores por excelência. Alimentam-se principalmente de outras aves, pequenos mamíferos, répteis e insetos. Eles caçam com grande precisão, utilizando sua visão extremamente aguçada para localizar presas a longas distâncias. Costumam capturar suas presas em pleno voo, realizando ataques velozes e precisos."
+    },
+    "flamingo": {
+        "displayName": "Flamingo",
+        "scientificName": "Phoenicopterus",
+        "hint": "É uma ave alta e elegante, conhecida por sua cor rosa vibrante e por se alimentar filtrando água com o bico curvado.",
+        "height": "0.9-1.5 m",
+        "mass": "2-4 kg",
+        "habitat": "Lagos rasos",
+        "diet": "Onívoro",
+        "description": "O flamingo é uma ave aquática, encontrada em lagos rasos, lagoas salinas e regiões costeiras das Américas, África, Europa e Ásia. Vive em grandes bandos, que podem ter milhares de indivíduos. Sua principal característica visual é o pescoço longo, pernas compridas e bico curvado para baixo. São famosos por descansar sobre uma perna só, o que ajuda a conservar calor corporal. São onívoros filtradores, alimentando-se de algas, pequenos crustáceos, moluscos e organismos microscópicos. Usam o bico especializado para filtrar a água e extrair alimentos, frequentemente mergulhando a cabeça de cabeça para baixo. A coloração rosa é resultado da ingestão de carotenoides presentes na dieta, quanto mais pigmento consomem, mais intensamente coloridos ficam."
+    },
+    "galinha": {
+        "displayName": "Galinha",
+        "scientificName": "Gallus gallus domesticus",
+        "hint": "É uma das aves mais domesticadas do mundo e pode botar mais de 300 ovos por ano, dependendo da raça.",
+        "height": "40-50 cm",
+        "mass": "1.5-4 kg",
+        "habitat": "Vários",
+        "diet": "Onívoro",
+        "description": "A galinha é uma ave domesticada, muito comum em ambientes rurais e urbanos. É criada principalmente para produção de carne e ovos. Originária do sudeste asiático, foi domesticada há milhares de anos e hoje está presente em quase todo o mundo. As galinhas são onívoras, ou seja, se alimentam de uma variedade de alimentos. Sua dieta inclui sementes, grãos, folhas, frutas, pequenos insetos, vermes e até pequenos répteis. Em criações domésticas ou industriais, são alimentadas com ração balanceada, milho, farelo de soja e restos de alimentos."
+    },
+    "pavao": {
+        "displayName": "Pavão",
+        "scientificName": "Pavo cristatus",
+        "hint": "É famoso por sua cauda exuberante em forma de leque, usada para atrair fêmeas durante o acasalamento.",
+        "height": "0.9-2 m",
+        "mass": "4-6 kg",
+        "habitat": "Vários",
+        "diet": "Onívoro",
+        "description": "O pavão, nativo do sul da Ásia. É criado tanto por sua beleza quanto como ave ornamental em jardins e zoológicos ao redor do mundo. Os machos são conhecidos por suas exibições de corte: erguem e abanam a cauda em leque para atrair as fêmeas. A plumagem vistosa é um exemplo clássico de seleção sexual na natureza. São onívoros, alimentando-se de sementes, grãos, frutas, insetos, pequenos répteis e até pequenos mamíferos. Gostam de ciscar o chão em busca de alimento, como as galinhas. Apesar do tamanho e da aparência pesada, os pavões conseguem voar curtas distâncias, geralmente para fugir de predadores ou alcançar poleiros altos para dormir."
+    },
+    "pelicano": {
+        "displayName": "Pelicano",
+        "scientificName": "Pelecanus occidentalis",
+        "hint": "O grande destaque dessa ave é seu bico, que pode chegar a 45 cm e possui uma bolsa elástica usada para capturar peixes.",
+        "height": "~1.8 m",
+        "mass": "4-13 kg",
+        "habitat": "Vários",
+        "diet": "Carnívoro",
+        "description": "O pelicano é uma ave aquática de grande porte, reconhecida por sua impressionante bolsa gular sob o bico, usada para capturar e armazenar peixes. São aves sociáveis e podem ser vistas voando em formação ou pescando em grupo. Habitam regiões costeiras, lagos e estuários em diversos continentes, com exceção da Antártica. Pelicanos são carnívoros, com dieta predominantemente piscívora. Alimentam-se principalmente de peixes, mas também podem consumir crustáceos e pequenos anfíbios. Utilizam sua bolsa para pescar com precisão. Em cativeiro, sua alimentação é composta por peixes frescos ou congelados, complementados com vitaminas quando necessário."
+    },
+    "pica-pau": {
+        "displayName": "Pica-pau",
+        "scientificName": "Picidae",
+        "hint": "É conhecido por bicar troncos de árvores com o bico forte e fazer sons rítmicos. Tem língua longa e pegajosa para capturar insetos.",
+        "height": "15-50 cm",
+        "mass": "30-300 g",
+        "habitat": "Vários",
+        "diet": "Insetívoro",
+        "description": "O pica-pau é encontrado em florestas, matas e áreas arborizadas de quase todo o mundo, com exceção da Austrália, Madagascar e regiões polares. Sua principal característica é o bico forte e reto, que usa para perfurar troncos de árvores em busca de larvas e insetos, ou para construir ninhos. Possui uma língua longa e pegajosa, que pode ser enrolada dentro do crânio quando não está em uso. Os pica-paus também usam suas batidas rítmicas nos troncos como forma de comunicação territorial. Suas cabeças têm estruturas anatômicas especiais que absorvem o impacto para evitar danos cerebrais. São insetívoros, alimentando-se principalmente de insetos, larvas, formigas e, em algumas espécies, também frutas e seiva de árvores."
+    },
+    "pinguim": {
+        "displayName": "Pinguim",
+        "scientificName": "Spheniscidae",
+        "hint": "É uma ave que não voa, adaptada ao frio e à vida aquática. Nada com grande agilidade e vive em colônias numerosas.",
+        "height": "0.3-1.2 m",
+        "mass": "1-40 kg",
+        "habitat": "Regiões frias",
+        "diet": "Carnívoro",
+        "description": "O pinguim é uma ave marinha, encontrada principalmente no Hemisfério Sul. As espécies mais conhecidas vivem em regiões frias como a Antártida, mas há também pinguins em climas mais temperados, como nas Ilhas Galápagos. Apesar de não voarem, são excelentes nadadores. Suas asas evoluíram para funcionar como nadadeiras, permitindo que “voem” debaixo d’água com grande velocidade e agilidade. São carnívoros, alimentando-se principalmente de peixes, krill (pequenos crustáceos), moluscos e outros organismos marinhos. Caçam mergulhando e nadando longas distâncias. Os pinguins são aves sociais e vivem em colônias que podem reunir milhares de indivíduos. Em muitas espécies, o macho e a fêmea revezam o cuidado dos ovos e filhotes."
+    },
+    "tucano": {
+        "displayName": "Tucano",
+        "scientificName": "Ramphastidae",
+        "hint": "O bico pode parecer pesado, mas é leve e oco por dentro, funcionando como um excelente regulador de temperatura.",
+        "height": "50-65 cm",
+        "mass": "300-700 g",
+        "habitat": "Florestas",
+        "diet": "Frugívoro",
+        "description": "O tucano é uma ave tropical, encontrada principalmente nas florestas da América do Sul, como a Amazônia. É facilmente reconhecido por seu grande e colorido bico, que pode medir até metade do comprimento do corpo. Apesar do tamanho, o bico é leve e funcional, usado para alcançar alimentos e interagir com o ambiente. Tucanos são frugívoros, ou seja, alimentam-se principalmente de frutas, mas também consomem insetos, ovos de outras aves, pequenos répteis e filhotes de pássaros. Em cativeiro, sua dieta deve ser rica em frutas variadas, com controle de açúcares e complementada com proteínas leves, como larvas ou ração específica."
     }
 }
