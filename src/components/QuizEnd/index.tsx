@@ -26,8 +26,12 @@ export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, av
                     className={styles.ave_reward}
                     key={index}
                 >
-                    <img src={aveData.imagePath} alt="" />
-                    <span>{aveData.displayName}</span>
+                    <div className={styles.ave_reward_container}>
+                        <img src={aveData.imagePath} alt="" />
+                    </div>
+                    <div className={styles.ave_reward_footer}>
+                        <span>{aveData.displayName}</span>
+                    </div>
                 </div>
             )
         })
@@ -49,16 +53,18 @@ export function QuizEnd({won, rightQuestions, totalQuestions, onRestartClick, av
                         />
                         <span>{rightQuestions} / {totalQuestions}</span>
                     </div>
+                    {(aveRewards.length > 0) && (
+                        <div className={styles.rewarded_aves}>
+                            <div className={styles.rewards_header}>
+                                <h1 className={styles.rewards_title}>Recompensas</h1>
+                            </div>
+                            <div className={styles.rewards}>
+                                {rewards}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
-            {(aveRewards.length > 0) && (
-                <div className={styles.rewarded_aves}>
-                    <h1>Recompensas:</h1>
-                    <div className={styles.rewards}>
-                        {rewards}
-                    </div>
-                </div>
-            )}
             <div className={styles.button_container}>
                 <button className={styles.quiz_end_btn} onClick={onRestartClick}>Reiniciar</button>
                 <Link 

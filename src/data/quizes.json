@@ -4,21 +4,7 @@
         "difficulty": "Medium",
         "rewards": [
             "tucano",
-            "pinguim",
-            "pica-pau",
-            "pelicano",
-            "pavao",
-            "galinha",
-            "flamingo",
-            "falcao",
-            "ema",
-            "corvo",
-            "coruja",
-            "casuar",
-            "canario",
-            "beija-flor",
-            "avestruz",
-            "arara"
+            "pinguim"
         ],
         "questions": [
             {

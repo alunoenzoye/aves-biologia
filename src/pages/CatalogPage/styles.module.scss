@@ -21,7 +21,7 @@
     padding: 0.5rem;
     background-color: var(--palette-white);
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 3fr 3fr 3fr;
     gap: 0.5rem;
     overflow-y: auto;
     flex-grow: 1;
@@ -37,18 +37,18 @@
 
 @media (width > 32rem) {
     .aves_container {
-        grid-template-columns: repeat(3, 3fr);
+        grid-template-columns: repeat(4, 4fr);
     }
 }
 
 @media (width > 45rem) {
     .aves_container {
-        grid-template-columns: repeat(4, 4fr);
+        grid-template-columns: repeat(5, 5fr);
     }
 }
 
 @media (width > 62rem) {
     .aves_container {
-        grid-template-columns: repeat(5, 5fr);
+        grid-template-columns: repeat(6, 6fr);
     }
 }

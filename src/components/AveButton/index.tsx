@@ -27,11 +27,13 @@ function AveButton({ave, onClick}: aveButtonProps) {
                     {isAveUnlocked ? (
                         <img className={styles.ave_button_icon} src={aveData.imagePath} alt={aveData.displayName} />
                     ) : (
-                        <Icon 
-                            path={mdiLock} 
-                            size={"5rem"}
-                            color={"#847E7C"}
-                        />
+                        <div className={styles.locked_icon_container}>
+                            <Icon 
+                                path={mdiLock} 
+                                size={"auto"}
+                                color={"#847E7C"}
+                            />
+                        </div>
                     )}
                 </div>
             </div>
