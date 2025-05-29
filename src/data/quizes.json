@@ -1,16 +1,129 @@
 {
     "quiz1": {
-        "name":"Quiz das aves",
+        "name":"Quiz 1",
+        "difficulty": "Easy",
+        "rewards": [
+            "galinha",
+            "canario",
+            "beija-flor",
+            "pica-pau"
+        ],
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "galinha",
+                "answers": ["galinha", "canario", "casuar", "falcao"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "canario",
+                "answers": ["canario", "pelicano", "flamingo", "pinguim"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "beija-flor",
+                "answers": ["beija-flor", "pica-pau", "ema", "coruja"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pica-pau",
+                "answers": ["tucano", "pica-pau", "avestruz", "beija-flor"]
+            }
+        ]
+    },
+    "quiz2": {
+        "name":"Quiz 2",
         "difficulty": "Medium",
         "rewards": [
+            "pavao",
+            "arara",
+            "falcao",
+            "coruja"
+        ],
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pavao",
+                "answers": ["pavao", "galinha", "casuar", "falcao"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "coruja",
+                "answers": ["flamingo", "coruja", "beija-flor", "arara"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "arara",
+                "answers": ["arara", "coruja", "ema", "avestruz"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "falcao",
+                "answers": ["tucano", "avestruz", "casuar", "falcao"]
+            }
+        ]
+    },
+    "quiz3": {
+        "name":"Quiz 3",
+        "difficulty": "Hard",
+        "rewards": [
+            "flamingo",
+            "corvo",
             "tucano",
+            "pelicano"
+        ],
+        "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "flamingo",
+                "answers": ["flamingo", "ema", "casuar", "canario"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "corvo",
+                "answers": ["ema", "tucano", "corvo", "pinguim"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "tucano",
+                "answers": ["beija-flor", "tucano", "pica-pau", "galinha"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pelicano",
+                "answers": ["casuar", "pica-pau", "pelicano", "beija-flor"]
+            }
+        ]
+    },
+    "quiz4": {
+        "name":"Quiz 4",
+        "difficulty": "Extreme",
+        "rewards": [
+            "casuar",
+            "ema",
+            "avestruz",
             "pinguim"
         ],
         "questions": [
             {
                 "name": "QUAL é essa ave",
-                "rightAnswer": "tucano",
-                "answers": ["tucano", "pica-pau"]
+                "rightAnswer": "pinguim",
+                "answers": ["corvo", "pinguim", "casuar", "falcao"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "avestruz",
+                "answers": ["galinha", "avestruz", "ema", "corvo"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "ema",
+                "answers": ["canario", "pavao", "ema", "avestruz"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "casuar",
+                "answers": ["beija-flor", "pica-pau", "galinha", "casuar"]
             }
         ]
     }

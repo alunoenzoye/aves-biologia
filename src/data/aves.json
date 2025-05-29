@@ -2,7 +2,7 @@
     "arara": {
         "displayName": "Arara-vermelha",
         "scientificName": "Ara chloropterus",
-        "hint": "Têm bicos extremamente fortes, capazes de quebrar sementes duras e até cascas de coco.",
+        "hint": "Ave grande e colorida, típica de florestas tropicais. Forte bico curvo e vocalização alta.",
         "height": "80-100 cm",
         "mass": "0.9-1.5 kg",
         "habitat": "Florestas tropicais",
@@ -12,7 +12,7 @@
     "avestruz": {
         "displayName": "Avestruz",
         "scientificName": "Struthio camelus ",
-        "hint": "Os ovos são grandes e pesados, chegando a 1,8 kg.",
+        "hint": "Maior ave do mundo. Corre em alta velocidade e vive em regiões secas da África.",
         "height": "Até 2.7 m",
         "mass": "Até 150 kg",
         "habitat": "Savanas, desertos",
@@ -22,7 +22,7 @@
     "beija-flor": {
         "displayName": "Beija-flor",
         "scientificName": "Trochilidae",
-        "hint": "É a menor ave do mundo e a única capaz de voar para trás. Suas asas batem tão rápido que produzem um zumbido no ar.",
+        "hint": "Ave minúscula, com voo rápido e capacidade de pairar. Alimenta-se de néctar.",
         "height": "6-13 cm",
         "mass": "2-6 g",
         "habitat": "Florestas tropicais",
@@ -32,7 +32,7 @@
     "canario": {
         "displayName": "Canário",
         "scientificName": "Serinus canaria domestica",
-        "hint": "É uma das aves canoras mais populares do mundo, famosa pelo canto melodioso e criado amplamente como ave de estimação.",
+        "hint": "Ave pequena, comum como animal de estimação, conhecida pelo canto melodioso.",
         "height": "12-15 cm",
         "mass": "15-25 g",
         "habitat": "Campos secos",
@@ -42,7 +42,7 @@
     "casuar": {
         "displayName": "Casuar",
         "scientificName": "Casuarius",
-        "hint": "É uma ave grande, conhecida pelo casco duro no topo da cabeça e pelas garras afiadas que usa para defesa.",
+        "hint": "Ave não voadora, de grande porte, nativa de florestas tropicais. Considerada perigosa.",
         "height": "1.5-1.8 m",
         "mass": "25-60 kg",
         "habitat": "Florestas tropicais",
@@ -52,7 +52,7 @@
     "coruja": {
         "displayName": "Coruja",
         "scientificName": "Strigiformes",
-        "hint": "É uma ave de rapina noturna, famosa pela cabeça giratória e olhos grandes. Simboliza sabedoria em muitas culturas.",
+        "hint": "Ave noturna com olhos grandes e audição aguçada. Caça silenciosamente.",
         "height": "20-70 cm",
         "mass": "0.1-2.5 kg",
         "habitat": "Vários",
@@ -67,12 +67,12 @@
         "mass": "0.5-1.5 kg",
         "habitat": "Vários",
         "diet": "Onívoro",
-        "description": "O corvo pertence ao gênero Corvus, dentro da família dos corvídeos, e é encontrado em praticamente todos os continentes, exceto na América do Sul e na Antártida. Vive em florestas, montanhas, campos abertos e também em ambientes urbanos. Conhecido por sua inteligência excepcional, o corvo é capaz de usar ferramentas, reconhecer rostos humanos, trabalhar em equipe e planejar ações futuras. Em algumas culturas, é símbolo de sabedoria ou mistério. É uma ave onívora, com dieta extremamente variada. Alimenta-se de frutas, sementes, grãos, pequenos animais, insetos, carniça e restos deixados por humanos. Sua adaptabilidade alimentar é um dos motivos de seu sucesso em diversos habitats. É também conhecido por emitir uma variedade de sons e vocalizações, alguns muito complexos. Algumas espécies podem até imitar a fala humana com precisão impressionante."
+        "description": "Ave preta, muito inteligente. Possui comunicação vocal complexa."
     },
     "ema": {
         "displayName": "Ema",
         "scientificName": "Rhea americana",
-        "hint": "É a maior ave nativa da América do Sul e, apesar de não voar, corre a grandes velocidades. É parente do avestruz.",
+        "hint": "Ave sul-americana, semelhante ao avestruz. Corre em campo aberto e não voa.",
         "height": "1.5-1.7 m",
         "mass": "20-40 kg",
         "habitat": "Campos abertos",
@@ -82,7 +82,7 @@
     "falcao": {
         "displayName": "Falcão",
         "scientificName": "Falco",
-        "hint": "É uma ave de rapina conhecida por sua visão aguçada, velocidade e habilidades de caça. Algumas espécies podem atingir mais de 300 km/h em voo de mergulho.",
+        "hint": "Ave de rapina rápida, com excelente visão. Predadora habilidosa em voo.",
         "height": "25-60 cm",
         "mass": "0.5-1.5 kg",
         "habitat": "Vários",
@@ -92,7 +92,7 @@
     "flamingo": {
         "displayName": "Flamingo",
         "scientificName": "Phoenicopterus",
-        "hint": "É uma ave alta e elegante, conhecida por sua cor rosa vibrante e por se alimentar filtrando água com o bico curvado.",
+        "hint": "Ave de pernas longas, bico curvo e coloração rosa. Vive em áreas alagadas.",
         "height": "0.9-1.5 m",
         "mass": "2-4 kg",
         "habitat": "Lagos rasos",
@@ -102,7 +102,7 @@
     "galinha": {
         "displayName": "Galinha",
         "scientificName": "Gallus gallus domesticus",
-        "hint": "É uma das aves mais domesticadas do mundo e pode botar mais de 300 ovos por ano, dependendo da raça.",
+        "hint": "Ave doméstica criada para ovos e carne. Não voa e é comum em zonas rurais.",
         "height": "40-50 cm",
         "mass": "1.5-4 kg",
         "habitat": "Vários",
@@ -112,7 +112,7 @@
     "pavao": {
         "displayName": "Pavão",
         "scientificName": "Pavo cristatus",
-        "hint": "É famoso por sua cauda exuberante em forma de leque, usada para atrair fêmeas durante o acasalamento.",
+        "hint": "Ave terrestre com cauda ornamental nos machos. Usa as penas para rituais de acasalamento.",
         "height": "0.9-2 m",
         "mass": "4-6 kg",
         "habitat": "Vários",
@@ -122,7 +122,7 @@
     "pelicano": {
         "displayName": "Pelicano",
         "scientificName": "Pelecanus occidentalis",
-        "hint": "O grande destaque dessa ave é seu bico, que pode chegar a 45 cm e possui uma bolsa elástica usada para capturar peixes.",
+        "hint": "Ave aquática com grande bolsa no bico, usada para pescar.",
         "height": "~1.8 m",
         "mass": "4-13 kg",
         "habitat": "Vários",
@@ -132,7 +132,7 @@
     "pica-pau": {
         "displayName": "Pica-pau",
         "scientificName": "Picidae",
-        "hint": "É conhecido por bicar troncos de árvores com o bico forte e fazer sons rítmicos. Tem língua longa e pegajosa para capturar insetos.",
+        "hint": "Ave que usa o bico para perfurar madeira em busca de insetos. Vive em áreas arborizadas.",
         "height": "15-50 cm",
         "mass": "30-300 g",
         "habitat": "Vários",
@@ -142,7 +142,7 @@
     "pinguim": {
         "displayName": "Pinguim",
         "scientificName": "Spheniscidae",
-        "hint": "É uma ave que não voa, adaptada ao frio e à vida aquática. Nada com grande agilidade e vive em colônias numerosas.",
+        "hint": "Ave marinha, não voadora, adaptada ao frio. Nada com eficiência e vive em colônias.",
         "height": "0.3-1.2 m",
         "mass": "1-40 kg",
         "habitat": "Regiões frias",
@@ -152,7 +152,7 @@
     "tucano": {
         "displayName": "Tucano",
         "scientificName": "Ramphastidae",
-        "hint": "O bico pode parecer pesado, mas é leve e oco por dentro, funcionando como um excelente regulador de temperatura.",
+        "hint": "Ave tropical com bico grande e colorido. Alimenta-se principalmente de frutas.",
         "height": "50-65 cm",
         "mass": "300-700 g",
         "habitat": "Florestas",
