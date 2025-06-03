@@ -1,4 +1,15 @@
+@use "../../scss/_btn_pointer_event_colors.scss" as *;
 @use "../../scss/_drop-shadow.scss" as *;
+
+@keyframes panX {
+    from {
+        background-position-x: 0%;
+    }
+
+    to {
+        background-position-x: 100%;
+    }
+}
 
 .quiz_end {
     width: fit-content;
@@ -35,30 +46,32 @@
 }
 
 .game_stats {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
     gap: 1rem;
 }
 
 .game_stat {
     background-color: var(--palette-yellow);
     padding: 0.5rem;
+    height: fit-content;
     border-radius: 0.5rem;
-    min-width: 8rem;
-
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
 
     span {
-        text-align: center;
+        text-align: end;
         flex-grow: 1;
         display: block;
         color: var(--palette-gray-dark);
         font-size: 1.5rem;
         font-weight: 800;
     }
+}
+
+.layout_container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .rewarded_aves {
@@ -83,6 +96,9 @@
     gap: 1rem;
     justify-content: center;
     overflow-x: auto;
+    background-size: 50% 100%;
+    background-repeat: repeat;
+    animation: 3s panX infinite linear;
 }
 
 .ave_reward {
@@ -91,16 +107,20 @@
     background-color: var(--palette-white);
     border-radius: 0.5rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .ave_reward_container {
     padding: 0.5rem;
+    height: 100%;
 
     img {
         background-color: var(--palette-beige);
         border-radius: 0.5rem;
         width: 100%;
         max-width: 6rem;
+        height: 100%;
     }
 }
 
@@ -122,13 +142,16 @@
 }
 
 .quiz_end_btn {
+    $color: #FFF7EB;
+
     @include drop-shadow;
+    @include btn_pointer_event_colors($color);
 
     display: block;
     text-decoration: none;
     padding: 0.5rem;
     font-family: inherit;
-    background-color: var(--palette-white);
+    background-color: $color;
     color: var(--palette-black);
     font-size: 1.5rem;
     font-weight: 800;

@@ -1,0 +1,12 @@
+@use "sass:color";
+
+@mixin btn_pointer_event_colors($color) {
+    &:hover {
+        background-color: color.adjust(color.adjust($color, $lightness: -10%), $saturation: -30%);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: color.adjust($color, $lightness: 10%);
+    }
+}

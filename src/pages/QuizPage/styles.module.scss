@@ -1,8 +1,15 @@
+@use "../../scss/_drop-shadow.scss" as *;
+
 .quiz_page {
     width: 100%;
     height: 100%;
 
     padding: 1rem;
+}
+
+.quiz_page_header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .quiz_question_container {
@@ -12,6 +19,8 @@
 }
 
 .quiz_question_number {
+    @include drop-shadow;
+    
     width: 4rem;
     height: 4rem;
     display: block;

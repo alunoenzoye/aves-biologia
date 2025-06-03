@@ -4,6 +4,7 @@ import Icon from "@mdi/react";
 import { mdiBird } from "@mdi/js";
 import { getAves } from "../../modules/dataFetcher";
 import { useMemo } from "react";
+import { motion as m } from "motion/react";
 
 const totalAves = Object.keys(getAves()).length;
 
@@ -20,7 +21,21 @@ function SaveData({ unlockedAves, onDelete, onPlay, active }: saveDataProps) {
 
         for (let i = 1; i <= totalAves; i++) {
             children.push(
-                <li className={styles.bird_badge} key={i}>
+                <m.ul 
+                    className={styles.bird_badge} 
+                    key={i}
+                    initial={{
+                        opacity: 0,
+                        translateY: "10px"
+                    }}
+                    animate={{
+                        opacity: 1,
+                        translateY: 0,
+                    }}
+                    transition={{
+                        delay: 0.025 * i
+                    }}
+                >
                     <Icon
                         className={styles.bird_icon_bg}
                         path={mdiBird}
@@ -35,7 +50,7 @@ function SaveData({ unlockedAves, onDelete, onPlay, active }: saveDataProps) {
                             size={"1.25rem"}
                         />
                     )}
-                </li>
+                </m.ul>
             )
         }
 
@@ -46,22 +61,35 @@ function SaveData({ unlockedAves, onDelete, onPlay, active }: saveDataProps) {
     return (
         <div className={styles.save_data}>
             <div className={styles.bird_list_container}>
-                <ul className={styles.bird_list} style={{
-                    backgroundImage: `url(${cloudsBg})`
-                }}>
+                <ul 
+                    className={styles.bird_list} 
+                    style={{
+                        backgroundImage: `url(${cloudsBg})`
+                    }}
+                >
                     {badges}
                 </ul>
             </div>
             {active && (
                 <div className={styles.btns_container}>
-                    <button className={styles.play_btn} onClick={onPlay}>JOGAR</button>
-                    <button className={styles.delete_btn} onClick={() => {
-                        const confirmed = confirm("Você tem certeza que quer apagar este jogador? Essa ação não pode ser desfeita.");
+                    <button 
+                        className={styles.play_btn} 
+                        onClick={onPlay}
+                    >
+                        JOGAR
+                    </button>
+                    <button 
+                        className={styles.delete_btn} 
+                        onClick={() => {
+                            const confirmed = confirm("Você tem certeza que quer apagar este jogador? Essa ação não pode ser desfeita.");
 
-                        if (confirmed) {
-                            onDelete();
-                        }
-                    }}>DELETAR</button>
+                            if (confirmed) {
+                                onDelete();
+                            }
+                        }}
+                    >
+                        DELETAR
+                    </button>
                 </div>
             )}
         </div>

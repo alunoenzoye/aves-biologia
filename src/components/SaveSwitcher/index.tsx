@@ -23,6 +23,7 @@ function SaveSwitcher({slots, selectedSlot, onSwitch, onPlay, onDelete, onCreate
                     onPlay={onPlay}
                     slot={slot}
                     selected={selectedSlot === slot}
+                    index={index}
                 />
             )}
         </div>

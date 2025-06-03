@@ -9,6 +9,9 @@ import useQuiz from "../../hooks/useQuiz";
 import useQuestion from "../../hooks/useQuestion";
 import useLoadedSave from "../../hooks/useLoadedSave";
 import useCurrentSave from "../../hooks/useCurrentSave";
+import getCurrentTimeInSeconds from "../../util/getCurrentTimeInSeconds";
+import QuizTimer from "../../components/QuizTimer";
+import { motion as m } from "motion/react";
 
 const CORRECT_ANSWER = "CORRECT";
 const WRONG_ANSWER = "WRONG";
@@ -18,6 +21,7 @@ const CHANGE_QUIZ = "CHANGE_QUIZ";
 type quizState = {
     currentQuiz: quizName,
     currentQuestion: number,
+    startTime: number,
     hasFailed: boolean,
     hasWon: boolean
     totalRightQuestions: number,
@@ -61,6 +65,7 @@ function reducer(state: quizState, action: quizAction) {
     } else if (action.type === RESTART) {
         return {
             ...state,
+            startTime: getCurrentTimeInSeconds(),
             totalRightQuestions: 0,
             currentQuestion: 0,
             hasFailed: false,
@@ -72,6 +77,7 @@ function reducer(state: quizState, action: quizAction) {
         }
 
         return {
+            startTime: getCurrentTimeInSeconds(),
             currentQuestion: 0,
             hasFailed: false,
             hasWon: false,
@@ -96,6 +102,7 @@ export function QuizPage() {
         reducer,
         {
             currentQuestion: 0,
+            startTime: getCurrentTimeInSeconds(),
             hasFailed: false,
             hasWon: false,
             currentQuiz: "quiz1",
@@ -126,10 +133,7 @@ export function QuizPage() {
     const [aveRewards, setAveRewards] = useState([] as aveRewards);
 
     const onRightAnswer = () => {
-        console.log(state.currentQuestion);
-        console.log(quizData.questions.length)
         if (state.currentQuestion + 1 > (quizData.questions.length - 1)) {
-            console.log(quizData.rewards);
             const rewards: aveRewards = []
 
             quizData.rewards.forEach(ave => {
@@ -142,8 +146,6 @@ export function QuizPage() {
             if (currentSave?.isQuizCompleted(state.currentQuiz) === false) {
                 currentSave.completeQuiz(state.currentQuiz);
             }
-
-            console.log(rewards);
 
             setAveRewards(rewards);
         }
@@ -158,6 +160,7 @@ export function QuizPage() {
         return (
             <QuizEnd 
                 won={true}
+                elapsedTime={getCurrentTimeInSeconds() - state.startTime}
                 aveRewards={aveRewards}
                 rightQuestions={state.totalRightQuestions}
                 totalQuestions={quizData.questions.length}
@@ -168,6 +171,7 @@ export function QuizPage() {
         return (
             <QuizEnd 
                 won={false}
+                elapsedTime={getCurrentTimeInSeconds() - state.startTime}
                 aveRewards={aveRewards}
                 rightQuestions={state.totalRightQuestions}
                 totalQuestions={quizData.questions.length}
@@ -177,11 +181,24 @@ export function QuizPage() {
     }
 
     return (
-        <div className={styles.quiz_page}>
+        <m.div 
+            className={styles.quiz_page}
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: 1
+            }}
+        >
             <div className={styles.quiz_question_container}>
-                <i className={styles.quiz_question_number}>
-                    <span>{state.currentQuestion + 1}</span>
-                </i>
+                <div className={styles.quiz_page_header}>
+                    <i className={styles.quiz_question_number}>
+                        <span>{state.currentQuestion + 1}</span>
+                    </i>
+                    <QuizTimer 
+                        startTime={state.startTime}
+                    />
+                </div>
                 <QuizQuestion
                     onRightAnswer={onRightAnswer}
                     onWrongAnswer={() => dispatch({ type: WRONG_ANSWER })}
@@ -189,7 +206,7 @@ export function QuizPage() {
                     answers={questionData.answers}
                 />
             </div>
-        </div>
+        </m.div>
     )
 }
 

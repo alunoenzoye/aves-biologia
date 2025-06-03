@@ -25,11 +25,13 @@ type saveAction = {
 function reducer(state: pageState, action: saveAction) {
     if (action.type === "SELECT") {
         return {
+            ...state,
             selectedSlot: action.slot
         }
     } else if (action.type === "DELETE") {
         if (state.selectedSlot !== null) {
             return {
+                ...state,
                 selectedSlot: null
             }
         }

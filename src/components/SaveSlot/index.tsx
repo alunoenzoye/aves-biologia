@@ -1,8 +1,10 @@
+import { useSpring } from "motion/react";
 import saveHandler from "../../modules/saveHandler";
 import { saveSlot } from "../../types";
 import SaveCreator from "../SaveCreator";
 import SaveData from "../SaveData";
 import styles from "./styles.module.scss";
+import { motion as m } from "motion/react";
 
 interface saveSlotProps {
     selected: boolean,
@@ -11,9 +13,10 @@ interface saveSlotProps {
     onDelete: () => void,
     onPlay: () => void,
     onCreate: (name: string) => void,
+    index: number
 }
 
-function SaveSlot({selected, slot, onClick, onCreate, onDelete, onPlay}: saveSlotProps) {
+function SaveSlot({selected, slot, onClick, onCreate, onDelete, onPlay, index}: saveSlotProps) {
     const slotData = saveHandler.getSaveOnSlot(slot);
 
     return (

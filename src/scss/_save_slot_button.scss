@@ -1,6 +1,8 @@
-@use "sass:color";
+@use ".././scss/btn_pointer_event_colors" as *;
 
 @mixin save_slot_btn($backgroundColor) {
+    @include btn_pointer_event_colors($backgroundColor);
+
     border-radius: 0.5rem;
     padding: 0.5rem;
     color: var(--palette-black);
@@ -11,13 +13,4 @@
     border: none;
     font-family: inherit;
     font-weight: 800;
-
-    &:hover {
-        background-color: color.adjust(color.adjust($backgroundColor, $lightness: -10%), $saturation: -30%);
-        cursor: pointer;
-    }
-
-    &:active {
-        background-color: color.adjust($backgroundColor, $lightness: 10%);
-    }
 }
