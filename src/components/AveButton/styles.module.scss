@@ -48,7 +48,11 @@
 
 .ave_button_footer {
    padding: 0.25rem; 
+   flex-grow: 1;
    background-color: var(--palette-yellow);
+   display: flex;
+   justify-items: center;
+   align-items: center;
 }
 
 .ave_button_title {
@@ -56,6 +60,8 @@
     font-size: 1.25rem;
     font-weight: 800;
     user-select: none;
+    text-align: center;
+    width: 100%;
 }
 
 .locked_icon_container {

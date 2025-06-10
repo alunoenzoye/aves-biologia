@@ -96,6 +96,7 @@
     gap: 1rem;
     justify-content: center;
     overflow-x: auto;
+    flex-wrap: wrap;
     background-size: 50% 100%;
     background-repeat: repeat;
     animation: 3s panX infinite linear;

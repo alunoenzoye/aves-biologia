@@ -35,7 +35,7 @@ export function QuizQuestion({onRightAnswer, onWrongAnswer, rightAnswer, answers
                         onRightAnswer();
                         setRevealBird(false);
                         setClicked(false);
-                    }, 2000);
+                    }, 0);
                 } else {
                     onWrongAnswer();
                     setRevealBird(false);
@@ -44,6 +44,7 @@ export function QuizQuestion({onRightAnswer, onWrongAnswer, rightAnswer, answers
             };
 
             const answerData = getAve(answer);
+            console.log(answerData);
 
             return (
                 <button
@@ -73,7 +74,7 @@ export function QuizQuestion({onRightAnswer, onWrongAnswer, rightAnswer, answers
                         }}
                     />
                 ) : (
-                    <img src={rightAveData.silhouetteImagePath} alt={rightAveData.displayName} />
+                    <img src={rightAveData.silhouetteImagePath} />
                 )}
             </div>
             <div className={styles.question_container_background}>

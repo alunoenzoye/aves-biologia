@@ -6,7 +6,10 @@
             "galinha",
             "canario",
             "beija-flor",
-            "pica-pau"
+            "pica-pau",
+            "faisao",
+            "condor",
+            "kiwi"
         ],
         "questions": [
             {
@@ -18,6 +21,21 @@
                 "name": "QUAL é essa ave",
                 "rightAnswer": "canario",
                 "answers": ["canario", "pelicano", "flamingo", "pinguim"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "faisao",
+                "answers": ["tucano", "faisao", "condor", "falcao"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "kiwi",
+                "answers": ["savacu", "ema", "kiwi", "cacatua"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "condor",
+                "answers": ["condor", "falcao", "peru", "coruja"]
             },
             {
                 "name": "QUAL é essa ave",
@@ -38,9 +56,27 @@
             "pavao",
             "arara",
             "falcao",
-            "coruja"
+            "coruja",
+            "cacatua",
+            "tesourao",
+            "peru"
         ],
         "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "cacatua",
+                "answers": ["peru", "beija-flor", "condor", "cacatua"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "tesourao",
+                "answers": ["ema", "galinha", "tesourao", "avestruz"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "peru",
+                "answers": ["peru", "periquito", "savacu", "tucano"]
+            },
             {
                 "name": "QUAL é essa ave",
                 "rightAnswer": "pavao",
@@ -70,9 +106,33 @@
             "flamingo",
             "corvo",
             "tucano",
-            "pelicano"
+            "pelicano",
+            "periquito",
+            "ganso",
+            "joao-de-barro",
+            "pardal"
         ],
         "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "periquito",
+                "answers": ["galinha", "cacatua", "periquito", "pardal"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "ganso",
+                "answers": ["periquito", "ganso", "avestruz", "canario"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "joao-de-barro",
+                "answers": ["ema", "avestruz", "joao-de-barro", "beija-flor"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pardal",
+                "answers": ["galinha", "corvo", "casuar", "pardal"]
+            },
             {
                 "name": "QUAL é essa ave",
                 "rightAnswer": "flamingo",
@@ -102,9 +162,39 @@
             "casuar",
             "ema",
             "avestruz",
-            "pinguim"
+            "pinguim",
+            "pitiguari",
+            "suiriri",
+            "savacu",
+            "tico-tico",
+            "quero-quero"
         ],
         "questions": [
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "pitiguari",
+                "answers": ["pitiguari", "tucano", "arara", "pinguim"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "savacu",
+                "answers": ["joao-de-barro", "savacu", "tucano", "pardal"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "suiriri",
+                "answers": ["galinha", "flamingo", "condor", "suiriri"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "tico-tico",
+                "answers": ["tico-tico", "quero-quero", "galinha", "faisao"]
+            },
+            {
+                "name": "QUAL é essa ave",
+                "rightAnswer": "quero-quero",
+                "answers": ["periquito", "pavao", "quero-quero", "pitiguari"]
+            },
             {
                 "name": "QUAL é essa ave",
                 "rightAnswer": "pinguim",

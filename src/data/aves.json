@@ -158,5 +158,155 @@
         "habitat": "Florestas",
         "diet": "Frugívoro",
         "description": "O tucano é uma ave tropical, encontrada principalmente nas florestas da América do Sul, como a Amazônia. É facilmente reconhecido por seu grande e colorido bico, que pode medir até metade do comprimento do corpo. Apesar do tamanho, o bico é leve e funcional, usado para alcançar alimentos e interagir com o ambiente. Tucanos são frugívoros, ou seja, alimentam-se principalmente de frutas, mas também consomem insetos, ovos de outras aves, pequenos répteis e filhotes de pássaros. Em cativeiro, sua dieta deve ser rica em frutas variadas, com controle de açúcares e complementada com proteínas leves, como larvas ou ração específica."
+    },
+    "faisao": {
+        "displayName": "Faisão",
+        "scientificName": "Phasianidae",
+        "hint": "Os machos são conhecidos por suas penas exuberantes e coloridas, usadas para atrair as fêmeas durante a época de acasalamento.",
+        "height": "60-90 cm",
+        "mass": "1-2.5 kg",
+        "habitat": "Vários",
+        "diet": "Onívoro",
+        "description": "O faisão é uma ave terrestre da família Phasianidae, originária da Ásia, mas atualmente criada em diversas partes do mundo, tanto para ornamentação quanto para caça. Vive em áreas abertas, bosques e campos, e apesar de conseguir voar por curtas distâncias, prefere andar ou correr."
+    },
+    "condor": {
+        "displayName": "Condor",
+        "scientificname": "Vultur gryphus",
+        "hint": "É uma das maiores aves voadoras do mundo, com envergadura que pode ultrapassar 3 metros!",
+        "height": "~1.2 m",
+        "mass": "9-15 kg",
+        "habitat": "América",
+        "diet": "Carnívoro",
+        "description": "Condores são carnívoros, mas se alimentam exclusivamente de animais mortos. Seu papel na natureza é essencial, pois ajudam a limpar o meio ambiente ao consumir carcaças. Graças à sua excelente visão, podem localizar alimento a grandes distâncias enquanto planam por horas sem bater as asas."
+    },
+    "kiwi": {
+        "displayName": "Kiwi",
+        "scientificname": "Apterygidae",
+        "hint": "O é uma ave que não voa, tem hábitos noturnos e põe ovos proporcionalmente enormes em relação ao seu corpo — o maior entre todas as aves!",
+        "height": "40-50 cm",
+        "mass": "1-3.5 kg",
+        "habitat": "Nova Zelândia",
+        "diet": "Onívoro",
+        "description": "O kiwi é uma ave endêmica da Nova Zelândia e pertence à família Apterygidae. É notável por seu bico longo com narinas na ponta, algo raro entre as aves, que usa para farejar o solo em busca de alimento. Vive escondido em florestas e tem hábitos solitários e noturnos."
+    },
+    "cacatua": {
+        "displayName": "Cacatua",
+        "scientificname": "Cacatuidae",
+        "hint": "As são muito inteligentes e sociáveis, podendo imitar sons e até vozes humanas. Seu penacho móvel é usado para expressar emoções!",
+        "height": "30-60 cm",
+        "mass": "0.3-1.2 kg",
+        "habitat": "Austrália",
+        "diet": "Onívoro",
+        "description": "A cacatua é uma ave da família Cacatuidae, nativa da Austrália, Nova Guiné e ilhas próximas. É conhecida por sua inteligência, capacidade de aprender truques, vocalizar sons e formar laços fortes com humanos. Vive em bandos na natureza e precisa de interação social constante quando em cativeiro."
+    },
+    "tesourao": {
+        "displayName": "Tesourão",
+        "scientificname": "Fregata magnificens",
+        "hint": "O macho infla uma grande bolsa vermelha no peito durante a época de reprodução para atrair as fêmeas — um espetáculo impressionante!",
+        "height": "~90 cm",
+        "mass": "1-1.5 kg",
+        "habitat": "América",
+        "diet": "Carnívoro",
+        "description": "O tesourão, também conhecido como fragata (Fregata magnificens), é uma ave marinha encontrada nas regiões tropicais das Américas, principalmente no litoral e ilhas oceânicas. Apesar de suas asas longas e voo elegante, ele evita pousar na água, pois não tem pés adaptados para nadar."
+    },
+    "peru": {
+        "displayName": "Peru",
+        "scientificname": "Meleagris gallopavo",
+        "hint": "É conhecido por seu “gobble” — um som gutural característico emitido pelos machos, especialmente durante a corte!",
+        "height": "90-120 cm",
+        "mass": "5-11 kg",
+        "habitat": "América do Norte",
+        "diet": "Onívoro",
+        "description": "O peru (Meleagris gallopavo) é uma ave nativa da América do Norte, domesticada há milhares de anos por povos indígenas. É amplamente criado em fazendas em todo o mundo, sendo símbolo cultural em países como os Estados Unidos."
+    },
+    "periquito": {
+        "displayName": "Periquito",
+        "scientificname": "Melopsittacus undulatus",
+        "hint": "Conseguem aprender sons e até palavras simples, principalmente se forem criados em ambientes interativos!",
+        "height": "~18 cm",
+        "mass": "30-40 g",
+        "habitat": "Vários",
+        "diet": "Granívora",
+        "description": "O periquito-australiano (Melopsittacus undulatus), também chamado de budgerigar ou periquito-comum, é nativo das regiões áridas da Austrália, mas é amplamente criado como ave de estimação no mundo todo."
+    },
+    "ganso": {
+        "displayName": "Ganso",
+        "scientificname": "Anser anser domesticus",
+        "hint": "São excelentes guardiões — eles fazem muito barulho e atacam quando percebem ameaças, inclusive protegendo outras espécies!",
+        "height": "75-110 cm",
+        "mass": "3-6.5 kg",
+        "habitat": "Vários",
+        "diet": "Onívoro",
+        "description": "O ganso doméstico (Anser anser domesticus) descende do ganso-cinzento selvagem europeu e foi domesticado há milhares de anos. É criado para produção de carne, penas e ovos, mas também como ave ornamental ou de guarda."
+    },
+    "joao-de-barro": {
+        "displayName": "João-de-Barro",
+        "scientificname": "Furnarius rufus",
+        "hint": "É famoso por construir ninhos de barro com formato de “forno”, com entrada estratégica para proteger contra ventos e predadores!",
+        "height": "18-20 cm",
+        "mass": "50-60 g",
+        "habitat": "América do Sul",
+        "diet": "Onívoro",
+        "description": "O joão-de-barro (Furnarius rufus) é uma ave típica da América do Sul, muito comum no Brasil, Argentina, Uruguai e Paraguai. Vive em campos abertos, pastagens e áreas rurais."
+    },
+    "pardal": {
+        "displayName": "Pardal",
+        "scientificname": "Passer domesticus",
+        "hint": "É uma das aves mais adaptáveis do mundo, convivendo com humanos em áreas urbanas, rurais e até industriais!",
+        "height": "14-16 cm",
+        "mass": "25-35 g",
+        "habitat": "Vários",
+        "diet": "Granívora",
+        "description": "O pardal-comum (Passer domesticus) é uma ave originária da Europa, Ásia e Norte da África, mas foi introduzida em todo o mundo. Hoje, é encontrado em quase todos os continentes, especialmente em cidades e vilarejos."
+    },
+    "pitiguari": {
+        "displayName": "Pitiguari",
+        "scientificname": "cyclarhis gujanensis",
+        "hint": "O canto é repetitivo e alto, sendo ouvido com frequência em áreas urbanas e matas secundárias — seu nome imita seu próprio canto!",
+        "height": "16-18cm",
+        "mass": "25-30 g",
+        "habitat": "América do sul",
+        "diet": "Onívoro",
+        "description": "O pitiguari (cyclarhis gujanensis) é uma ave típica da américa do sul, presente no brasil, bolívia, paraguai e argentina, habitando matas secas, cerrados, bordas de florestas e até áreas urbanizadas com vegetação."
+    },
+    "suiriri": {
+        "displayName": "Suiriri",
+        "scientificname": "Tyrannus melancholicus",
+        "hint": "É conhecido por seu canto agudo e repetitivo, que soa como o próprio nome: 'sui-ri-ri'!",
+        "height": "20 cm",
+        "mass": "25-30g",
+        "habitat": "América do Sul",
+        "diet": "Insetívoro",
+        "description": "O suiriri (Tyrannus melancholicus) é uma ave passeriforme da família dos tirânideos, muito comum em campos, cerrados, áreas rurais e urbanizadas em praticamente todo o Brasil, além de outros países da América Latina."
+    },
+    "savacu": {
+        "displayName": "Savacu",
+        "scientificname": "Nycticorax nycticorax",
+        "hint": "É um mestre da paciência — pode ficar imóvel por minutos à espera de um peixe desatento se aproximar!",
+        "height": "60-65 cm",
+        "mass": "600-800 g",
+        "habitat": "Vários",
+        "diet": "Carnívoro",
+        "description": "O savacu (Nycticorax nycticorax), também conhecido como socó-dorminhoco, é uma ave da família dos ardeídeos (mesma dos garças e socós). É encontrada em manguezais, brejos, margens de rios, lagos e represas, em grande parte do Brasil e do mundo."
+    },
+    "tico-tico": {
+        "displayName": "Tico-tico",
+        "scientificname": "Zonotrichia capensis",
+        "hint": "O canto é melodioso e alegre, muito comum em áreas abertas e cidades brasileiras.",
+        "height": "13-15 cm",
+        "mass": "20-30 g",
+        "habitat": "Brasil",
+        "diet": "Onívoro",
+        "description": "O tico-tico (Zonotrichia capensis), conhecido também como tico-tico-rei, é uma ave passeriforme muito comum em todo o Brasil, encontrada em campos, jardins, parques e áreas abertas."
+    },
+    "quero-quero": {
+        "displayName": "Quero-quero",
+        "scientificname": "Vanellus chilensis",
+        "hint": "É conhecido por seu comportamento territorial agressivo — espanta invasores com seu grito característico e voos rápidos!",
+        "height": "30-35 cm",
+        "mass": "120-180 g",
+        "habitat": "América do Sul",
+        "diet": "Onívoro",
+        "description": "O quero-quero (Vanellus chilensis), também chamado de colhereiro, é uma ave comum em áreas abertas, campos, pastagens e zonas urbanas do Brasil e América do Sul."
     }
 }

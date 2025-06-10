@@ -21,8 +21,9 @@
         .bird_list {
             flex-wrap: wrap;
             border-radius: 0.5rem;
+            max-height: 3.5rem;
+            overflow-y: auto;
             display: flex;
-            overflow: hidden;
             list-style-type: none;
             background-size: 50%;
             background-position-y: 30%;
