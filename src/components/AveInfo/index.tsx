@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import Icon from '@mdi/react';
 import { mdiArrowLeft, mdiWeight, mdiForest, mdiRuler, mdiSilverwareForkKnife } from '@mdi/js';
 import AveInfoField from "../AveInfoField";
-
+import { motion as m } from "motion/react";
 
 type aveInfoProps = {
     ave: aveName,
@@ -33,9 +33,45 @@ function AveInfo({ave, onClose}: aveInfoProps) {
             </div>
             <div className={styles.ave_info_content}>
                 <div className={styles.ave_info_description}>
-                    <h1>{aveData.displayName}</h1>
-                    <h2>{aveData.scientificName}</h2>
-                    <p>{aveData.description}</p>
+                    <m.h1
+                        transition={{
+                            delay: 0.1
+                        }}
+                        initial={{
+                            opacity: 0,
+                            translateX: 10,
+                        }} 
+                        animate={{
+                            opacity: 1,
+                            translateX: 0,
+                        }} 
+                    >{aveData.displayName}</m.h1>
+                    <m.h2
+                        transition={{
+                            delay: 0.2
+                        }}
+                        initial={{
+                            opacity: 0,
+                            translateX: 20,
+                        }} 
+                        animate={{
+                            opacity: 1,
+                            translateX: 0,
+                        }} 
+                    >{aveData.scientificName}</m.h2>
+                    <m.p
+                        transition={{
+                            delay: 0.3
+                        }}
+                        initial={{
+                            opacity: 0,
+                            translateY: 20,
+                        }} 
+                        animate={{
+                            opacity: 1,
+                            translateY: 0,
+                        }} 
+                    >{aveData.description}</m.p>
                 </div>
                 <div className={styles.ave_info_data}>
                     <AveInfoField 

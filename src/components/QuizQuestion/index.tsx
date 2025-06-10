@@ -35,7 +35,7 @@ export function QuizQuestion({onRightAnswer, onWrongAnswer, rightAnswer, answers
                         onRightAnswer();
                         setRevealBird(false);
                         setClicked(false);
-                    }, 0);
+                    }, 2000);
                 } else {
                     onWrongAnswer();
                     setRevealBird(false);

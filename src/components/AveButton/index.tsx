@@ -4,6 +4,7 @@ import { aveName } from "../../types";
 import styles from "./styles.module.scss";
 import Icon from '@mdi/react';
 import { mdiLock } from '@mdi/js';
+import { motion as m } from "motion/react";
 
 type aveButtonProps = {
     ave: aveName
@@ -17,10 +18,16 @@ function AveButton({ave, onClick}: aveButtonProps) {
     const isAveUnlocked = currentSave?.isAveUnlocked(ave) === true;
 
     return (
-        <button 
+        <m.button 
             className={styles.ave_button} 
             onClick={(isAveUnlocked) ? onClick : undefined} 
             data-locked={!isAveUnlocked}
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1
+            }}
         >
             <div className={styles.ave_button_icon_container}>
                 <div className={styles.ave_button_icon_content}>
@@ -42,7 +49,7 @@ function AveButton({ave, onClick}: aveButtonProps) {
                     {isAveUnlocked ? aveData.displayName : "???"}
                 </span>
             </div>
-        </button>
+        </m.button>
     )
 }
 
